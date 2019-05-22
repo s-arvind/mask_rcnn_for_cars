@@ -37,12 +37,12 @@ for record in cursor:
         totalFrames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
         videoDuration = round(totalFrames / frameRate)
         skipTime = videoDuration - 150
-       
+
         if skipTime > 0:
             cap.set(cv2.CAP_PROP_POS_MSEC, skipTime * 1000)
             print (counter)
-            var_name = defaultdict(lambda :0)
-	    x = []
+            var_name = defaultdict(lambda: 0)
+            x = []
             while (cap.isOpened()):
                 frameId = cap.get(cv2.CAP_PROP_POS_MSEC)  # current frame number
                 print (frameId)
@@ -54,15 +54,15 @@ for record in cursor:
                     filename = str(int(counter)) + ".jpg"
                     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                     var = cv2.Laplacian(gray, cv2.CV_64F).var()
-                    var_name[filename] = {"var":var, "frame":frame, "f_name":f_name}
+                    var_name[filename] = {"var": var, "frame": frame, "f_name": f_name}
                     x.append(var)
-	    x.sort()
-	    sum_avg = round(sum(x[:5])/5)
-            
-	    for image in var_name:
-            	if image["var"] > sum_avg:
-			cv2.imwrite(os.path.join(dir_path,image["f_name"]),image["frame"])
+            x.sort()
+            sum_avg = round(sum(x[:5]) / 5)
 
-    cap.release()
-    counter = 0
-    print ("Done!")
+        for image in var_name:
+            if image["var"] > sum_avg:
+                cv2.imwrite(os.path.join(dir_path, image["f_name"]), image["frame"])
+
+cap.release()
+counter = 0
+print ("Done!")

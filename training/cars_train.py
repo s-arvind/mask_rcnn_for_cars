@@ -4,22 +4,15 @@ import time
 import numpy as np
 import imgaug  # https://github.com/aleju/imgaug (pip3 install imgaug)
 
-# Download and install the Python COCO tools from https://github.com/waleedka/coco
-# That's a fork from the original https://github.com/pdollar/coco with a bug
-# fix for Python 3.
-# I submitted a pull request https://github.com/cocodataset/cocoapi/pull/50
-# If the PR is merged then use the original repo.
-# Note: Edit PythonAPI/Makefile and replace "python" with "python3".
-from pycocotools.coco import COCO
-from pycocotools.cocoeval import COCOeval
-from pycocotools import mask as maskUtils
 
 import zipfile
 import urllib.request
 import shutil
 
 # Root directory of the project
-ROOT_DIR = os.path.abspath("../../")
+from training.load_data import load_dataset
+
+ROOT_DIR = os.path.abspath("../videos/")
 
 # Import Mask RCNN
 sys.path.append(ROOT_DIR)  # To find local version of the library
@@ -40,23 +33,10 @@ DEFAULT_LOGS_DIR = os.path.join(ROOT_DIR, "logs")
 
 
 class CarsConfig(Config):
-    """Configuration for training on MS COCO.
-    Derives from the base Config class and overrides values specific
-    to the COCO dataset.
-    """
-    # Give the configuration a recognizable name
-    # NAME = "coco"
 
-    # We use a GPU with 12GB memory, which can fit two images.
-    # Adjust down if you use a smaller GPU.
     IMAGES_PER_GPU = 2
 
-    # Uncomment to train on 8 GPUs (default is 1)
-    # GPU_COUNT = 8
-
-    # Number of classes (including background)
     NUM_CLASSES = 1+10  # COCO has 80 classes
-
 
 if __name__ == '__main__':
     import argparse
@@ -68,26 +48,26 @@ if __name__ == '__main__':
                         metavar="<command>",
                         help="'train' or 'evaluate' on MS COCO")
     parser.add_argument('--dataset', required=True,
-                        metavar="/path/to/coco/",
-                        help='Directory of the MS-COCO dataset')
-    parser.add_argument('--model', required=True,
-                        metavar="/path/to/weights.h5",
-                        help="Path to weights .h5 file or 'coco'")
+                        help='Direction of car panels')
+    # parser.add_argument('--model', required=True,
+    #                     metavar="/path/to/weights.h5",
+    #                     help="Path to weights .h5 file or 'coco'")
     parser.add_argument('--logs', required=False,
                         default=DEFAULT_LOGS_DIR,
                         metavar="/path/to/logs/",
                         help='Logs and checkpoints directory (default=logs/)')
-    parser.add_argument('--limit', required=False,
-                        default=500,
-                        metavar="<image count>",
-                        help='Images to use for evaluation (default=500)')
+    # parser.add_argument('--limit', required=False,
+    #                     default=500,
+    #                     metavar="<image count>",
+    #                     help='Images to use for evaluation (default=500)')
+
     args = parser.parse_args()
     print("Command: ", args.command)
-    print("Model: ", args.model)
-    print("Dataset: ", args.dataset)
-    print("Year: ", args.year)
+    # print("Model: ", args.model)
+    # print("Dataset: ", args.dataset)
+    # print("Year: ", args.year)
     print("Logs: ", args.logs)
-    print("Auto Download: ", args.download)
+    # print("Auto Download: ", args.download)
 
     # Configurations
     if args.command == "train":
@@ -132,10 +112,8 @@ if __name__ == '__main__':
     if args.command == "train":
         # Training dataset. Use the training set and 35K from the
         # validation set, as as in the Mask RCNN paper.
-        dataset_train = CocoDataset()
-        dataset_train.load_coco(args.dataset, "train", year=args.year, auto_download=args.download)
-        if args.year in '2014':
-            dataset_train.load_coco(args.dataset, "valminusminival", year=args.year, auto_download=args.download)
+        dataset_train = load_dataset(args.dataset)
+        # dataset_train.load_coco(args.dataset, "train", year=args.year, auto_download=args.download)
         dataset_train.prepare()
 
         # Validation dataset
