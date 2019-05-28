@@ -41,13 +41,16 @@ class Dataset(object):
             "name": class_name,
         })
 
-    def add_image(self, region, shape, name, path):
+    def add_image(self, regions, name, path, direction):
         image_info = {
-            "region": region,
-            "shape": shape,
+            "regions": [],
             "name": name,
             "path": path
         }
+
+        for attr in regions:
+            if len(attr["region_attributes"][direction]) > 0:
+                image_info["regions"].append(attr)
         # image_info.update(kwargs)
         self.image_info.append(image_info)
 
@@ -145,24 +148,27 @@ class Dataset(object):
           """
         # If not a balloon dataset image, delegate to parent class
 
-        image_shape = image_id["shape"]
-        image_region = image_id["region"]
+        image_shape = image_id["regions"]
+        # image_region = image_id["region"]
         # if image_info["source"] != "damage":
         #     return super(self.__class__, self).load_mask(image_id)
 
         # Convert polygons to a bitmap mask of shape
         # [height, width, instance_count]
         # info = self.image_info[image_id]
-        mask = np.zeros([height, width,1],
+        mask = np.zeros([height, width,len(image_shape)],
                         dtype=np.uint8)
-        # for i, p in enumerate(info["polygons"]):
+        class_ids = []
+        for i, p in enumerate(image_shape):
             # Get indexes of pixels inside the polygon and set them to 1
-        rr, cc = skimage.draw.polygon(image_shape['all_points_y'], image_shape['all_points_x'])
-        mask[rr, cc, 1] = self.class_map[image_region["front"]]
+            rr, cc = skimage.draw.polygon(image_shape["shape_attributes"]['all_points_y'], image_shape["shape_attributes"]['all_points_x'])
+            mask[rr, cc, i] = self.class_map["front"][image_shape["region_attributes"]["front"].strip()]
+            class_ids.append(self.class_map["front"][image_shape["region_attributes"]["front"].strip()])
 
         # Return mask, and array of class IDs of each instance. Since we have
         # one class ID only, we return an array of 1s
-        return mask.astype(np.bool), np.array([self.class_map[image_region["front"]]], dtype=np.int32)
+
+        return mask.astype(np.bool), np.array(class_ids, dtype=np.int32)
 
 
 def load_dataset(direction):
@@ -182,14 +188,9 @@ def load_dataset(direction):
         annotations = [file for file in list_values if len(file["regions"]) > 0]
         path = label.split(".")[0]
         for file in annotations:  #
-            regions = file["regions"]
             image_name = file["filename"]
-            # image_attr = []
-            for region in regions:
-                if len(region["region_attributes"][direction]) > 0:
-                    # image_attr.append(region)
-                    image_train_dataset.add_image(region["region_attributes"][direction], region["shape_attributes"],
-                                                  image_name, path)
+            image_regions = file["regions"]
+            image_val_dataset.add_image(image_regions, image_name, path, direction)
 
     for label in val:
         print(label)
@@ -201,14 +202,10 @@ def load_dataset(direction):
         annotations = [file for file in list_values if len(file["regions"]) > 0]
         path = label.split(".")[0]
         for file in annotations:  #
-            regions = file["regions"]
             image_name = file["filename"]
-            image_attr = []
-            for region in regions:
-                if len(region["region_attributes"][direction]) > 0:
-                    image_attr.append(region)
-                    image_val_dataset.add_image(region["region_attributes"][direction],
-                                                region["shape_attributes"], image_name, path)
+            image_regions = file["regions"]
+            image_val_dataset.add_image(image_regions, image_name, path, direction)
+
             # image_dataset.add_image(image_attr, image_name, path)
     return (image_train_dataset, image_val_dataset)
 
