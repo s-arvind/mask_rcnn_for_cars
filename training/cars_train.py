@@ -36,7 +36,7 @@ class CarsConfig(Config):
 
     IMAGES_PER_GPU = 2
 
-    NUM_CLASSES = 1+10  # COCO has 80 classes
+    NUM_CLASSES = 12  # COCO has 80 classes
 
 if __name__ == '__main__':
     import argparse
@@ -117,9 +117,9 @@ if __name__ == '__main__':
         dataset_train.prepare()
 
         # Validation dataset
-        dataset_val = CocoDataset()
-        val_type = "val" if args.year in '2017' else "minival"
-        dataset_val.load_coco(args.dataset, val_type, year=args.year, auto_download=args.download)
+        dataset_val = load_dataset("val")
+        # val_type = "val" if args.year in '2017' else "minival"
+        # dataset_val.load_coco(args.dataset, val_type, year=args.year, auto_download=args.download)
         dataset_val.prepare()
 
         # Image Augmentation

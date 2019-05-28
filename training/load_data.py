@@ -1,8 +1,10 @@
 import os
 import json
 import numpy as np
+import copy
 # path = "../videos/"
 label_path = "/Users/arvind/Documents/deeplearningvideo/labels/"
+import skimage
 # list_dir = os.listdir(path)
 
 # print (list_dir)
@@ -13,9 +15,14 @@ class Dataset(object):
     def __init__(self, class_map=None):
         self._image_ids = []
         self.image_info = []
+        self.class_map = {}
         # Background is always the first class
-        self.class_info = [{"source": "", "id": 0, "name": "BG"}]
-        self.source_class_ids = {}
+        with open("labels.json","r") as f:
+            classes = json.load(f)
+        f.close()
+        self.class_map = copy.deepcopy(classes["front"])
+        self.class_info = list(self.class_map.keys())
+        self.source_class_ids = list(self.source_class_ids.values())
 
     def add_class(self, source, class_id, class_name):
         assert "." not in source, "Source name cannot contain a dot"
@@ -31,13 +38,14 @@ class Dataset(object):
             "name": class_name,
         })
 
-    def add_image(self, source, image_id, path, **kwargs):
+    def add_image(self, region, shape, name, path):
         image_info = {
-            "id": image_id,
-            "source": source,
-            "path": path,
+            "region": region,
+            "shape": shape,
+            "name": name,
+            "path": path
         }
-        image_info.update(kwargs)
+        # image_info.update(kwargs)
         self.image_info.append(image_info)
 
     def image_reference(self, image_id):
@@ -147,7 +155,8 @@ def load_dataset(direction):
     label_list = os.listdir(label_path)
     train = label_list[:len(label_list)-2]
     val = label_list[-2:]
-
+    image_train_dataset = Dataset()
+    image_val_dataset = Dataset()
     for label in train:
         print(label)
         file = os.path.join(label_path, label)
@@ -155,10 +164,37 @@ def load_dataset(direction):
             label_json = json.load(f)
         f.close()
         list_values = list(label_json["_via_img_metadata"].values())
-        annotations = [region for region in list_values if len(region["regions"]) > 0]
-        for region in annotations:
-            polygons = [r["shape_attributes"] for r in region["regions"].values()]
+        annotations = [file for file in list_values if len(file["regions"]) > 0]
+        path = label.split(".")[0]
+        for file in annotations:   #
+            regions = file["regions"]
+            image_name = file["filename"]
+            image_attr = []
+            for region in regions:
+                if len(region["region_attributes"][direction]) > 0:
+                    image_attr.append(region)
+                    image_train_dataset.add_image(region["region_attributes"][direction], region["shape_attributes"], image_name, path)
 
+    for label in val:
+        print(label)
+        file = os.path.join(label_path, label)
+        with open(file, "r") as f:
+            label_json = json.load(f)
+        f.close()
+        list_values = list(label_json["_via_img_metadata"].values())
+        annotations = [file for file in list_values if len(file["regions"]) > 0]
+        path = label.split(".")[0]
+        for file in annotations:  #
+            regions = file["regions"]
+            image_name = file["filename"]
+            image_attr = []
+            for region in regions:
+                if len(region["region_attributes"][direction]) > 0:
+                    image_attr.append(region)
+                    image_val_dataset.add_image(region["region_attributes"][direction],
+                                                  region["shape_attributes"], image_name, path)
+            # image_dataset.add_image(image_attr, image_name, path)
+    return (image_train_dataset,image_val_dataset)
 if __name__ == "__main__":
     load_dataset()
 
