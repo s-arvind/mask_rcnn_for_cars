@@ -42,10 +42,11 @@ for record in cursor:
         totalFrames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
         videoDuration = round(totalFrames / frameRate)
         skipTime = videoDuration - 150
-       
+
         if skipTime > 0:
             cap.set(cv2.CAP_PROP_POS_MSEC, skipTime * 1000)
             print (counter)
+
             var_name = []
 	    x = []
             while (cap.isOpened()):
@@ -61,12 +62,12 @@ for record in cursor:
                     var = cv2.Laplacian(gray, cv2.CV_64F).var()
                     var_name.append({"f_name":filename,"var":var, "frame":frame})
                     x.append(var)
-	    x.sort()
-	    sum_avg = round(sum(x[:5])/5)
-            
-	    for image in var_name:
-            	if image["var"] > sum_avg:
-			cv2.imwrite(os.path.join(dir_path,image["f_name"]),image["frame"])
+            x.sort()
+            sum_avg = round(sum(x[:5]) / 5)
+
+        for image in var_name:
+            if image["var"] > sum_avg:
+                cv2.imwrite(os.path.join(dir_path, image["f_name"]), image["frame"])
 
     	cap.release()
     counter = 0

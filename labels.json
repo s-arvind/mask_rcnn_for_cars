@@ -1,0 +1,51 @@
+{
+  "front": {
+    "bumper": 1,
+    "bonnet": 2,
+    "leftheadlight": 3,
+    "rightheadlight": 4,
+    "leftfoglamp": 5,
+    "rightfoglamp": 6,
+    "towhookcover": 7,
+    "windshield": 8,
+    "engine": 9
+  },
+  "rear": {
+    "bumper": 10,
+    "lefttaillight": 11,
+    "righttaillight": 12,
+    "tailgate": 13,
+    "windshield": 14
+  },
+  "left": {
+    "frontdoor": 15,
+    "reardoor": 16,
+    "frontdoorhandle": 17,
+    "reardoorhandle": 18,
+    "frontdoorwindow": 19,
+    "reardoorwindow": 20,
+    "sidemirror": 21,
+    "runningboard": 22,
+    "fender": 23,
+    "qpanel": 24,
+    "fuellid": 25
+  },
+  "right": {
+    "frontdoor": 26,
+    "reardoor": 27,
+    "frontdoorhandle": 28,
+    "reardoorhandle": 29,
+    "frontdoorwindow": 30,
+    "reardoorwindow": 31,
+    "sidemirror": 32,
+    "runningboard": 33,
+    "fender": 34,
+    "qpanel": 35,
+    "fuellid": 36
+  },
+  "damage": {
+    "dent": 37,
+    "scratch": 38,
+    "crack": 39
+  }
+}
