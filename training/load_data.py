@@ -210,5 +210,3 @@ def load_dataset(direction):
     return (image_train_dataset, image_val_dataset)
 
 
-if __name__ == "__main__":
-    load_dataset()
