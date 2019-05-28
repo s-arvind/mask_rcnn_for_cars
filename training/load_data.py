@@ -2,9 +2,12 @@ import os
 import json
 import numpy as np
 import copy
+
 # path = "../videos/"
 label_path = "/Users/arvind/Documents/deeplearningvideo/labels/"
 import skimage
+
+
 # list_dir = os.listdir(path)
 
 # print (list_dir)
@@ -17,7 +20,7 @@ class Dataset(object):
         self.image_info = []
         self.class_map = {}
         # Background is always the first class
-        with open("labels.json","r") as f:
+        with open("labels.json", "r") as f:
             classes = json.load(f)
         f.close()
         self.class_map = copy.deepcopy(classes["front"])
@@ -122,38 +125,50 @@ class Dataset(object):
         """Load the specified image and return a [H,W,3] Numpy array.
         """
         # Load image
-        image = skimage.io.imread(self.image_info[image_id]['path'])
+        image_path = os.path.join(image_id["path"], image_id["name"])
+        image = skimage.io.imread(image_path)
+        height, width = image.shape[:2]
         # If grayscale. Convert to RGB for consistency.
         if image.ndim != 3:
             image = skimage.color.gray2rgb(image)
         # If has an alpha channel, remove it for consistency
         if image.shape[-1] == 4:
             image = image[..., :3]
-        return image
+        return (image, height, width)
 
-    def load_mask(self, image_id):
-        """Load instance masks for the given image.
+    def load_mask(self, image_id, height, width):
+        """Generate instance masks for an image.
+          Returns:
+          masks: A bool array of shape [height, width, instance count] with
+              one mask per instance.
+          class_ids: a 1D array of class IDs of the instance masks.
+          """
+        # If not a balloon dataset image, delegate to parent class
 
-        Different datasets use different ways to store masks. Override this
-        method to load instance masks and return them in the form of am
-        array of binary masks of shape [height, width, instances].
+        image_shape = image_id["shape"]
+        image_region = image_id["region"]
+        # if image_info["source"] != "damage":
+        #     return super(self.__class__, self).load_mask(image_id)
 
-        Returns:
-            masks: A bool array of shape [height, width, instance count] with
-                a binary mask per instance.
-            class_ids: a 1D array of class IDs of the instance masks.
-        """
-        # Override this function to load a mask from your dataset.
-        # Otherwise, it returns an empty mask.
-        logging.warning("You are using the default load_mask(), maybe you need to define your own one.")
-        mask = np.empty([0, 0, 0])
-        class_ids = np.empty([0], np.int32)
-        return mask, class_ids
+        # Convert polygons to a bitmap mask of shape
+        # [height, width, instance_count]
+        # info = self.image_info[image_id]
+        mask = np.zeros([height, width,1],
+                        dtype=np.uint8)
+        # for i, p in enumerate(info["polygons"]):
+            # Get indexes of pixels inside the polygon and set them to 1
+        rr, cc = skimage.draw.polygon(image_shape['all_points_y'], image_shape['all_points_x'])
+        mask[rr, cc, 1] = self.class_map[image_region["front"]]
+
+        # Return mask, and array of class IDs of each instance. Since we have
+        # one class ID only, we return an array of 1s
+        return mask.astype(np.bool), np.array([self.class_map[image_region["front"]]], dtype=np.int32)
+
 
 def load_dataset(direction):
     print("function called")
     label_list = os.listdir(label_path)
-    train = label_list[:len(label_list)-2]
+    train = label_list[:len(label_list) - 2]
     val = label_list[-2:]
     image_train_dataset = Dataset()
     image_val_dataset = Dataset()
@@ -166,14 +181,15 @@ def load_dataset(direction):
         list_values = list(label_json["_via_img_metadata"].values())
         annotations = [file for file in list_values if len(file["regions"]) > 0]
         path = label.split(".")[0]
-        for file in annotations:   #
+        for file in annotations:  #
             regions = file["regions"]
             image_name = file["filename"]
-            image_attr = []
+            # image_attr = []
             for region in regions:
                 if len(region["region_attributes"][direction]) > 0:
-                    image_attr.append(region)
-                    image_train_dataset.add_image(region["region_attributes"][direction], region["shape_attributes"], image_name, path)
+                    # image_attr.append(region)
+                    image_train_dataset.add_image(region["region_attributes"][direction], region["shape_attributes"],
+                                                  image_name, path)
 
     for label in val:
         print(label)
@@ -192,11 +208,10 @@ def load_dataset(direction):
                 if len(region["region_attributes"][direction]) > 0:
                     image_attr.append(region)
                     image_val_dataset.add_image(region["region_attributes"][direction],
-                                                  region["shape_attributes"], image_name, path)
+                                                region["shape_attributes"], image_name, path)
             # image_dataset.add_image(image_attr, image_name, path)
-    return (image_train_dataset,image_val_dataset)
+    return (image_train_dataset, image_val_dataset)
+
+
 if __name__ == "__main__":
     load_dataset()
-
-
-

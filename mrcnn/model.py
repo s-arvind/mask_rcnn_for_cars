@@ -1208,8 +1208,8 @@ def load_image_gt(dataset, config, image_id, augment=False, augmentation=None,
         defined in MINI_MASK_SHAPE.
     """
     # Load image and mask
-    image = dataset.load_image(image_id)
-    mask, class_ids = dataset.load_mask(image_id)
+    image, height, width = dataset.load_image(image_id)
+    mask, class_ids = dataset.load_mask(image_id, height, width)
     original_shape = image.shape
     image, window, scale, padding, crop = utils.resize_image(
         image,
@@ -1271,7 +1271,7 @@ def load_image_gt(dataset, config, image_id, augment=False, augmentation=None,
     # Active classes
     # Different datasets have different classes, so track the
     # classes supported in the dataset of this image.
-    active_class_ids = np.zeros([dataset.num_classes], dtype=np.int32)
+    active_class_ids = np.zeros([10], dtype=np.int32)
     source_class_ids = dataset.source_class_ids[dataset.image_info[image_id]["source"]]
     active_class_ids[source_class_ids] = 1
 
@@ -1672,7 +1672,7 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
     """
     b = 0  # batch item index
     image_index = -1
-    image_ids = np.copy(dataset.image_ids)
+    image_ids = np.arange(len(dataset))
     error_count = 0
     no_augmentation_sources = no_augmentation_sources or []
 
@@ -1694,19 +1694,23 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
                 np.random.shuffle(image_ids)
 
             # Get GT bounding boxes and masks for image.
-            image_id = image_ids[image_index]
-
-            # If the image source is not to be augmented pass None as augmentation
-            if dataset.image_info[image_id]['source'] in no_augmentation_sources:
-                image, image_meta, gt_class_ids, gt_boxes, gt_masks = \
-                load_image_gt(dataset, config, image_id, augment=augment,
-                              augmentation=None,
-                              use_mini_mask=config.USE_MINI_MASK)
-            else:
-                image, image_meta, gt_class_ids, gt_boxes, gt_masks = \
-                    load_image_gt(dataset, config, image_id, augment=augment,
+            image_id = dataset[image_index]
+            image, image_meta, gt_class_ids, gt_boxes, gt_masks = \
+                        load_image_gt(dataset, config, image_id, augment=augment,
                                 augmentation=augmentation,
                                 use_mini_mask=config.USE_MINI_MASK)
+
+            # If the image source is not to be augmented pass None as augmentation
+            # if dataset.image_info[image_id]['source'] in no_augmentation_sources:
+            #     image, image_meta, gt_class_ids, gt_boxes, gt_masks = \
+            #     load_image_gt(dataset, config, image_id, augment=augment,
+            #                   augmentation=None,
+            #                   use_mini_mask=config.USE_MINI_MASK)
+            # else:
+            #     image, image_meta, gt_class_ids, gt_boxes, gt_masks = \
+            #         load_image_gt(dataset, config, image_id, augment=augment,
+            #                     augmentation=augmentation,
+            #                     use_mini_mask=config.USE_MINI_MASK)
 
             # Skip images that have no instances. This can happen in cases
             # where we train on a subset of classes and the image doesn't

@@ -112,15 +112,15 @@ if __name__ == '__main__':
     if args.command == "train":
         # Training dataset. Use the training set and 35K from the
         # validation set, as as in the Mask RCNN paper.
-        dataset_train = load_dataset(args.dataset)
+        dataset_train, dataset_val = load_dataset(args.dataset)
         # dataset_train.load_coco(args.dataset, "train", year=args.year, auto_download=args.download)
-        dataset_train.prepare()
+        # dataset_train.prepare()
 
         # Validation dataset
-        dataset_val = load_dataset("val")
+        # dataset_val = load_dataset("val")
         # val_type = "val" if args.year in '2017' else "minival"
         # dataset_val.load_coco(args.dataset, val_type, year=args.year, auto_download=args.download)
-        dataset_val.prepare()
+        # dataset_val.prepare()
 
         # Image Augmentation
         # Right/Left flip 50% of the time
