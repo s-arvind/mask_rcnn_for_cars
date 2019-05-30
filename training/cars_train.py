@@ -10,13 +10,14 @@ import urllib.request
 import shutil
 
 # Root directory of the project
-from training.load_data import load_dataset
 
-ROOT_DIR = os.path.abspath("../videos/")
+ROOT_DIR = os.getcwd()
+
 
 # Import Mask RCNN
-sys.path.append(ROOT_DIR)  # To find local version of the library
+sys.path.insert(0,ROOT_DIR)  # To find local version of the library
 from mrcnn.config import Config
+from training.load_data import load_dataset
 from mrcnn import model as modellib, utils
 
 # Path to trained weights file
@@ -33,10 +34,11 @@ DEFAULT_LOGS_DIR = os.path.join(ROOT_DIR, "logs")
 
 
 class CarsConfig(Config):
+    NAME = "mrcnn"
 
     IMAGES_PER_GPU = 2
 
-    NUM_CLASSES = 12  # COCO has 80 classes
+    NUM_CLASSES = 9  # COCO has 80 classes
 
 if __name__ == '__main__':
     import argparse
@@ -49,9 +51,9 @@ if __name__ == '__main__':
                         help="'train' or 'evaluate' on MS COCO")
     parser.add_argument('--dataset', required=True,
                         help='Direction of car panels')
-    # parser.add_argument('--model', required=True,
-    #                     metavar="/path/to/weights.h5",
-    #                     help="Path to weights .h5 file or 'coco'")
+    parser.add_argument('--model', required=True,
+                        metavar="/path/to/weights.h5",
+                        help="Path to weights .h5 file or 'coco'")
     parser.add_argument('--logs', required=False,
                         default=DEFAULT_LOGS_DIR,
                         metavar="/path/to/logs/",
@@ -63,8 +65,8 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     print("Command: ", args.command)
-    # print("Model: ", args.model)
-    # print("Dataset: ", args.dataset)
+    print("Model: ", args.model)
+    print("Dataset: ", args.dataset)
     # print("Year: ", args.year)
     print("Logs: ", args.logs)
     # print("Auto Download: ", args.download)
@@ -84,10 +86,13 @@ if __name__ == '__main__':
         config = InferenceConfig()
     config.display()
 
+    print("%"*100)
     # Create model
     if args.command == "train":
         model = modellib.MaskRCNN(mode="training", config=config,
                                   model_dir=args.logs)
+        print("$" * 100)
+
     else:
         model = modellib.MaskRCNN(mode="inference", config=config,
                                   model_dir=args.logs)
