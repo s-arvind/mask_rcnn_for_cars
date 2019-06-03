@@ -25,7 +25,7 @@ class Dataset(object):
         f.close()
         self.class_map = copy.deepcopy(classes["front"])
         self.class_info = list(self.class_map.keys())
-        self.source_class_ids = list(self.source_class_ids.values())
+        self.source_class_ids = {}
 
     def add_class(self, source, class_id, class_name):
         assert "." not in source, "Source name cannot contain a dot"
@@ -171,7 +171,7 @@ class Dataset(object):
         return mask.astype(np.bool), np.array(class_ids, dtype=np.int32)
 
 
-def load_dataset(direction):
+def load_dataset(dataset,direction):
     print("function called")
     label_list = os.listdir(label_path)
     train = label_list[:len(label_list) - 2]
@@ -181,6 +181,7 @@ def load_dataset(direction):
     for label in train:
         print(label)
         file = os.path.join(label_path, label)
+        print(file,")"*30)
         with open(file, "r") as f:
             label_json = json.load(f)
         f.close()
