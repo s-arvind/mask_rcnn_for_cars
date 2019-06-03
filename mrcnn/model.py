@@ -1672,7 +1672,8 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
     """
     b = 0  # batch item index
     image_index = -1
-    image_ids = np.arange(len(dataset))
+    image_ids = np.arange(len(dataset.image_info))
+    
     error_count = 0
     no_augmentation_sources = no_augmentation_sources or []
 
@@ -1810,8 +1811,8 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
             raise
         except:
             # Log it and skip the image
-            logging.exception("Error processing image {}".format(
-                dataset.image_info[image_id]))
+            # logging.exception("Error processing image {}".format(
+            #     ))
             error_count += 1
             if error_count > 5:
                 raise
@@ -2117,9 +2118,10 @@ class MaskRCNN():
         if h5py is None:
             raise ImportError('`load_weights` requires h5py.')
         f = h5py.File(filepath, mode='r')
+        print ("$"*30,f,"$"*30)
         if 'layer_names' not in f.attrs and 'model_weights' in f:
             f = f['model_weights']
-
+            print ("!"*30,f,"!"*30)
         # In multi-GPU training, we wrap the model. Get layers
         # of the inner model because they have the weights.
         keras_model = self.keras_model
@@ -2268,6 +2270,7 @@ class MaskRCNN():
                 print('Re-starting from epoch %d' % self.epoch)
 
         # Directory for training logs
+        print(self.model_dir, "!"*10)
         self.log_dir = os.path.join(self.model_dir, "{}{:%Y%m%dT%H%M}".format(
             self.config.NAME.lower(), now))
 
