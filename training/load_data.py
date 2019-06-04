@@ -4,7 +4,7 @@ import numpy as np
 import copy
 
 # path = "../videos/"
-label_path = "/Users/arvind/Documents/deeplearningvideo/labels/"
+label_path = "/home/tarun/ankit/arvind/DeepLearningVideo/labels/"
 import skimage
 
 
