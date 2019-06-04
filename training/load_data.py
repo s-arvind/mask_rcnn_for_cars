@@ -23,7 +23,7 @@ class Dataset(object):
         with open("labels.json", "r") as f:
             classes = json.load(f)
         f.close()
-        self.class_map = copy.deepcopy(classes["front"])
+        self.class_map = copy.deepcopy(classes)
         self.class_info = list(self.class_map.keys())
         self.source_class_ids = {}
 
@@ -129,6 +129,7 @@ class Dataset(object):
         """
         # Load image
         image_path = os.path.join(image_id["path"], image_id["name"])
+        image_path = os.path.join("~/Documents/data/",image_path)
         image = skimage.io.imread(image_path)
         height, width = image.shape[:2]
         # If grayscale. Convert to RGB for consistency.
@@ -161,9 +162,9 @@ class Dataset(object):
         class_ids = []
         for i, p in enumerate(image_shape):
             # Get indexes of pixels inside the polygon and set them to 1
-            rr, cc = skimage.draw.polygon(image_shape["shape_attributes"]['all_points_y'], image_shape["shape_attributes"]['all_points_x'])
-            mask[rr, cc, i] = self.class_map["front"][image_shape["region_attributes"]["front"].strip()]
-            class_ids.append(self.class_map["front"][image_shape["region_attributes"]["front"].strip()])
+            rr, cc = skimage.draw.polygon(p["shape_attributes"]['all_points_y'], p["shape_attributes"]['all_points_x'])
+            mask[rr, cc, i] = self.class_map["front"][p["region_attributes"]["front"].strip()]
+            class_ids.append(self.class_map["front"][p["region_attributes"]["front"].strip()])
 
         # Return mask, and array of class IDs of each instance. Since we have
         # one class ID only, we return an array of 1s
@@ -191,7 +192,7 @@ def load_dataset(dataset,direction):
         for file in annotations:  #
             image_name = file["filename"]
             image_regions = file["regions"]
-            image_val_dataset.add_image(image_regions, image_name, path, direction)
+            image_train_dataset.add_image(image_regions, image_name, path, direction)
 
     for label in val:
         print(label)

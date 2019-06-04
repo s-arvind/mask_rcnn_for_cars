@@ -1272,8 +1272,9 @@ def load_image_gt(dataset, config, image_id, augment=False, augmentation=None,
     # Different datasets have different classes, so track the
     # classes supported in the dataset of this image.
     active_class_ids = np.zeros([10], dtype=np.int32)
-    source_class_ids = dataset.source_class_ids[dataset.image_info[image_id]["source"]]
-    active_class_ids[source_class_ids] = 1
+    for class_id in image_id["regions"]:
+        source_class_ids = dataset.class_map["front"][class_id["region_attributes"]["front"].strip()]
+        active_class_ids[source_class_ids] = 1
 
     # Resize masks to smaller size to reduce memory usage
     if use_mini_mask:
@@ -1695,7 +1696,7 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
                 np.random.shuffle(image_ids)
 
             # Get GT bounding boxes and masks for image.
-            image_id = dataset[image_index]
+            image_id = dataset.image_info[image_index]
             image, image_meta, gt_class_ids, gt_boxes, gt_masks = \
                         load_image_gt(dataset, config, image_id, augment=augment,
                                 augmentation=augmentation,
@@ -1802,17 +1803,18 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
                             batch_mrcnn_class_ids, -1)
                         outputs.extend(
                             [batch_mrcnn_class_ids, batch_mrcnn_bbox, batch_mrcnn_mask])
-
                 yield inputs, outputs
 
                 # start a new batch
                 b = 0
         except (GeneratorExit, KeyboardInterrupt):
+            print("above error"*10)
             raise
         except:
             # Log it and skip the image
             # logging.exception("Error processing image {}".format(
             #     ))
+            print("error"*10)
             error_count += 1
             if error_count > 5:
                 raise

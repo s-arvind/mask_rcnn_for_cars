@@ -38,7 +38,9 @@ class CarsConfig(Config):
 
     IMAGES_PER_GPU = 2
 
-    NUM_CLASSES = 9  # COCO has 80 classes
+    NUM_CLASSES = 1+9  # COCO has 80 classes
+
+
 
 if __name__ == '__main__':
     import argparse
