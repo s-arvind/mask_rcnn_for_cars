@@ -1183,7 +1183,7 @@ def mrcnn_mask_loss_graph(target_masks, target_class_ids, pred_masks):
 #  Data Generator
 ############################################################
 
-def load_image_gt(dataset, config, image_id, augment=False, augmentation=None,
+def load_image_gt(dataset, config, image_details, augment=False, augmentation=None,
                   use_mini_mask=False):
     """Load and return ground truth data for an image (image, mask, bounding boxes).
 
@@ -1208,8 +1208,9 @@ def load_image_gt(dataset, config, image_id, augment=False, augmentation=None,
         defined in MINI_MASK_SHAPE.
     """
     # Load image and mask
-    image, height, width = dataset.load_image(image_id)
-    mask, class_ids = dataset.load_mask(image_id, height, width)
+    image, height, width = dataset.load_image(image_details)
+
+    mask, class_ids = dataset.load_mask(image_details, height, width)
     original_shape = image.shape
     image, window, scale, padding, crop = utils.resize_image(
         image,
@@ -1271,9 +1272,15 @@ def load_image_gt(dataset, config, image_id, augment=False, augmentation=None,
     # Active classes
     # Different datasets have different classes, so track the
     # classes supported in the dataset of this image.
-    active_class_ids = np.zeros([10], dtype=np.int32)
-    for class_id in image_id["regions"]:
-        source_class_ids = dataset.class_map["front"][class_id["region_attributes"]["front"].strip()]
+    active_class_ids = np.zeros([37], dtype=np.int32)
+    for class_id in image_details["regions"]:
+        key = value = ""
+        for k, v in class_id["region_attributes"].items():
+            if len(v.strip()) > 0 and k != "damage":
+                key = k.strip()
+                value = v.strip()
+                break
+        source_class_ids = dataset.class_map[key][value]
         active_class_ids[source_class_ids] = 1
 
     # Resize masks to smaller size to reduce memory usage
@@ -1281,7 +1288,7 @@ def load_image_gt(dataset, config, image_id, augment=False, augmentation=None,
         mask = utils.minimize_mask(bbox, mask, config.MINI_MASK_SHAPE)
 
     # Image meta data
-    image_meta = compose_image_meta(image_id, original_shape, image.shape,
+    image_meta = compose_image_meta(image_details["image_id"], original_shape, image.shape,
                                     window, scale, active_class_ids)
 
     return image, image_meta, class_ids, bbox, mask
@@ -1688,6 +1695,7 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
                                              config.RPN_ANCHOR_STRIDE)
 
     # Keras requires a generator to run indefinitely.
+    counter = 0
     while True:
         try:
             # Increment index to pick next image. Shuffle if at the start of an epoch.
@@ -1696,12 +1704,11 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
                 np.random.shuffle(image_ids)
 
             # Get GT bounding boxes and masks for image.
-            image_id = dataset.image_info[image_index]
+            image_details = dataset.image_info[image_index]
             image, image_meta, gt_class_ids, gt_boxes, gt_masks = \
-                        load_image_gt(dataset, config, image_id, augment=augment,
-                                augmentation=augmentation,
+                        load_image_gt(dataset, config, image_details, augment=augment,
+                                augmentation=None,
                                 use_mini_mask=config.USE_MINI_MASK)
-
             # If the image source is not to be augmented pass None as augmentation
             # if dataset.image_info[image_id]['source'] in no_augmentation_sources:
             #     image, image_meta, gt_class_ids, gt_boxes, gt_masks = \
@@ -1787,7 +1794,8 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
                     batch_mrcnn_bbox[b] = mrcnn_bbox
                     batch_mrcnn_mask[b] = mrcnn_mask
             b += 1
-
+            print ("--"*10, counter)
+            counter += 1
             # Batch full?
             if b >= batch_size:
                 inputs = [batch_images, batch_image_meta, batch_rpn_match, batch_rpn_bbox,
@@ -1803,6 +1811,7 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
                             batch_mrcnn_class_ids, -1)
                         outputs.extend(
                             [batch_mrcnn_class_ids, batch_mrcnn_bbox, batch_mrcnn_mask])
+
                 yield inputs, outputs
 
                 # start a new batch
@@ -2120,10 +2129,8 @@ class MaskRCNN():
         if h5py is None:
             raise ImportError('`load_weights` requires h5py.')
         f = h5py.File(filepath, mode='r')
-        print ("$"*30,f,"$"*30)
         if 'layer_names' not in f.attrs and 'model_weights' in f:
             f = f['model_weights']
-            print ("!"*30,f,"!"*30)
         # In multi-GPU training, we wrap the model. Get layers
         # of the inner model because they have the weights.
         keras_model = self.keras_model
@@ -2272,7 +2279,6 @@ class MaskRCNN():
                 print('Re-starting from epoch %d' % self.epoch)
 
         # Directory for training logs
-        print(self.model_dir, "!"*10)
         self.log_dir = os.path.join(self.model_dir, "{}{:%Y%m%dT%H%M}".format(
             self.config.NAME.lower(), now))
 
@@ -2369,7 +2375,7 @@ class MaskRCNN():
             workers = 0
         else:
             workers = multiprocessing.cpu_count()
-
+        print(type(train_generator), "*"*10, val_generator)
         self.keras_model.fit_generator(
             train_generator,
             initial_epoch=self.epoch,
@@ -2380,7 +2386,7 @@ class MaskRCNN():
             validation_steps=self.config.VALIDATION_STEPS,
             max_queue_size=100,
             workers=workers,
-            use_multiprocessing=True,
+            use_multiprocessing=False,
         )
         self.epoch = max(self.epoch, epochs)
 

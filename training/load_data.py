@@ -41,17 +41,13 @@ class Dataset(object):
             "name": class_name,
         })
 
-    def add_image(self, regions, name, path, direction):
+    def add_image(self, regions, name, image_id):
         image_info = {
-            "regions": [],
+            "regions": regions,
             "name": name,
-            "path": path
+            "image_id": image_id
         }
 
-        for attr in regions:
-            if len(attr["region_attributes"][direction]) > 0:
-                image_info["regions"].append(attr)
-        # image_info.update(kwargs)
         self.image_info.append(image_info)
 
     def image_reference(self, image_id):
@@ -128,8 +124,7 @@ class Dataset(object):
         """Load the specified image and return a [H,W,3] Numpy array.
         """
         # Load image
-        image_path = os.path.join(image_id["path"], image_id["name"])
-        image_path = os.path.join("~/Documents/data/",image_path)
+        image_path = os.path.join("~/Documents/data/",image_id["name"])
         image = skimage.io.imread(image_path)
         height, width = image.shape[:2]
         # If grayscale. Convert to RGB for consistency.
@@ -138,6 +133,7 @@ class Dataset(object):
         # If has an alpha channel, remove it for consistency
         if image.shape[-1] == 4:
             image = image[..., :3]
+        print (image_path)
         return (image, height, width)
 
     def load_mask(self, image_id, height, width):
@@ -149,7 +145,7 @@ class Dataset(object):
           """
         # If not a balloon dataset image, delegate to parent class
 
-        image_shape = image_id["regions"]
+        image_masks = image_id["regions"]
         # image_region = image_id["region"]
         # if image_info["source"] != "damage":
         #     return super(self.__class__, self).load_mask(image_id)
@@ -157,14 +153,21 @@ class Dataset(object):
         # Convert polygons to a bitmap mask of shape
         # [height, width, instance_count]
         # info = self.image_info[image_id]
-        mask = np.zeros([height, width,len(image_shape)],
+        mask = np.zeros([height, width,len(image_masks)],
                         dtype=np.uint8)
         class_ids = []
-        for i, p in enumerate(image_shape):
+        for i, p in enumerate(image_masks):
             # Get indexes of pixels inside the polygon and set them to 1
             rr, cc = skimage.draw.polygon(p["shape_attributes"]['all_points_y'], p["shape_attributes"]['all_points_x'])
-            mask[rr, cc, i] = self.class_map["front"][p["region_attributes"]["front"].strip()]
-            class_ids.append(self.class_map["front"][p["region_attributes"]["front"].strip()])
+            key = value = ""
+            for k, v in p["region_attributes"].items():
+                if len(v.strip()) > 0 and k != "damage":
+                    key = k.strip()
+                    value = v.strip()
+                    break
+
+            mask[rr, cc, i] = self.class_map[key][value]
+            class_ids.append(self.class_map[key][value])
 
         # Return mask, and array of class IDs of each instance. Since we have
         # one class ID only, we return an array of 1s
@@ -172,43 +175,47 @@ class Dataset(object):
         return mask.astype(np.bool), np.array(class_ids, dtype=np.int32)
 
 
-def load_dataset(dataset,direction):
+def load_dataset(dataset):
     print("function called")
-    label_list = os.listdir(label_path)
-    train = label_list[:len(label_list) - 2]
-    val = label_list[-2:]
+    train = os.listdir(os.path.join(label_path,"train"))
+    val = os.listdir(os.path.join(label_path,"val"))
     image_train_dataset = Dataset()
     image_val_dataset = Dataset()
     for label in train:
-        print(label)
-        file = os.path.join(label_path, label)
-        print(file,")"*30)
+        file = os.path.join(label_path, "train", label)
+        print (file)
         with open(file, "r") as f:
             label_json = json.load(f)
         f.close()
         list_values = list(label_json["_via_img_metadata"].values())
         annotations = [file for file in list_values if len(file["regions"]) > 0]
         path = label.split(".")[0]
+        counter = 0
         for file in annotations:  #
-            image_name = file["filename"]
+            image_name = path + "_" + file["filename"]
             image_regions = file["regions"]
-            image_train_dataset.add_image(image_regions, image_name, path, direction)
+            image_id = counter
+            counter += 1
+            image_train_dataset.add_image(image_regions, image_name, image_id)
 
     for label in val:
-        print(label)
-        file = os.path.join(label_path, label)
+        file = os.path.join(label_path, "val", label)
+        print (file)
         with open(file, "r") as f:
             label_json = json.load(f)
         f.close()
         list_values = list(label_json["_via_img_metadata"].values())
         annotations = [file for file in list_values if len(file["regions"]) > 0]
         path = label.split(".")[0]
+        counter = 0
         for file in annotations:  #
-            image_name = file["filename"]
+            image_name = path + "_" + file["filename"]
             image_regions = file["regions"]
-            image_val_dataset.add_image(image_regions, image_name, path, direction)
+            image_id = counter
+            counter += 1
+            image_val_dataset.add_image(image_regions, image_name, image_id)
 
-            # image_dataset.add_image(image_attr, image_name, path)
+
     return (image_train_dataset, image_val_dataset)
 
 
