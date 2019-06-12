@@ -1,0 +1,6255 @@
+{
+  "_via_settings": {
+    "ui": {
+      "annotation_editor_height": 25,
+      "annotation_editor_fontsize": 0.8,
+      "leftsidebar_width": 18,
+      "image_grid": {
+        "img_height": 80,
+        "rshape_fill": "none",
+        "rshape_fill_opacity": 0.3,
+        "rshape_stroke": "yellow",
+        "rshape_stroke_width": 2,
+        "show_region_shape": true,
+        "show_image_policy": "all"
+      },
+      "image": {
+        "region_label": "__via_region_id__",
+        "region_color": "__via_default_region_color__",
+        "region_label_font": "10px Sans",
+        "on_image_annotation_editor_placement": "NEAR_REGION"
+      }
+    },
+    "core": {
+      "buffer_size": 18,
+      "filepath": {},
+      "default_filepath": ""
+    },
+    "project": {
+      "name": "PB117338014"
+    }
+  },
+  "_via_img_metadata": {
+    "1.jpg186412": {
+      "filename": "1.jpg",
+      "size": 186412,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "2.jpg303633": {
+      "filename": "2.jpg",
+      "size": 303633,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "3.jpg171842": {
+      "filename": "3.jpg",
+      "size": 171842,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "4.jpg158531": {
+      "filename": "4.jpg",
+      "size": 158531,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "5.jpg175622": {
+      "filename": "5.jpg",
+      "size": 175622,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "6.jpg175938": {
+      "filename": "6.jpg",
+      "size": 175938,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "7.jpg182565": {
+      "filename": "7.jpg",
+      "size": 182565,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "8.jpg168905": {
+      "filename": "8.jpg",
+      "size": 168905,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "9.jpg294035": {
+      "filename": "9.jpg",
+      "size": 294035,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "10.jpg152410": {
+      "filename": "10.jpg",
+      "size": 152410,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "11.jpg155500": {
+      "filename": "11.jpg",
+      "size": 155500,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "12.jpg176380": {
+      "filename": "12.jpg",
+      "size": 176380,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "13.jpg204430": {
+      "filename": "13.jpg",
+      "size": 204430,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "14.jpg149008": {
+      "filename": "14.jpg",
+      "size": 149008,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "15.jpg227348": {
+      "filename": "15.jpg",
+      "size": 227348,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "16.jpg264705": {
+      "filename": "16.jpg",
+      "size": 264705,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "17.jpg212596": {
+      "filename": "17.jpg",
+      "size": 212596,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "18.jpg153924": {
+      "filename": "18.jpg",
+      "size": 153924,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "19.jpg141050": {
+      "filename": "19.jpg",
+      "size": 141050,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "20.jpg119716": {
+      "filename": "20.jpg",
+      "size": 119716,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "21.jpg124041": {
+      "filename": "21.jpg",
+      "size": 124041,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "22.jpg132488": {
+      "filename": "22.jpg",
+      "size": 132488,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "23.jpg146448": {
+      "filename": "23.jpg",
+      "size": 146448,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "24.jpg127070": {
+      "filename": "24.jpg",
+      "size": 127070,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "25.jpg142976": {
+      "filename": "25.jpg",
+      "size": 142976,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "26.jpg233514": {
+      "filename": "26.jpg",
+      "size": 233514,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "27.jpg271624": {
+      "filename": "27.jpg",
+      "size": 271624,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "28.jpg208524": {
+      "filename": "28.jpg",
+      "size": 208524,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "29.jpg194398": {
+      "filename": "29.jpg",
+      "size": 194398,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "30.jpg99565": {
+      "filename": "30.jpg",
+      "size": 99565,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "31.jpg140456": {
+      "filename": "31.jpg",
+      "size": 140456,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "32.jpg138344": {
+      "filename": "32.jpg",
+      "size": 138344,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "33.jpg142402": {
+      "filename": "33.jpg",
+      "size": 142402,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "34.jpg177240": {
+      "filename": "34.jpg",
+      "size": 177240,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "35.jpg187643": {
+      "filename": "35.jpg",
+      "size": 187643,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "36.jpg171848": {
+      "filename": "36.jpg",
+      "size": 171848,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "37.jpg178362": {
+      "filename": "37.jpg",
+      "size": 178362,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "38.jpg163437": {
+      "filename": "38.jpg",
+      "size": 163437,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "39.jpg191724": {
+      "filename": "39.jpg",
+      "size": 191724,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "40.jpg192437": {
+      "filename": "40.jpg",
+      "size": 192437,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "41.jpg194324": {
+      "filename": "41.jpg",
+      "size": 194324,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "42.jpg205205": {
+      "filename": "42.jpg",
+      "size": 205205,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "43.jpg270390": {
+      "filename": "43.jpg",
+      "size": 270390,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "44.jpg202729": {
+      "filename": "44.jpg",
+      "size": 202729,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "45.jpg248005": {
+      "filename": "45.jpg",
+      "size": 248005,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "46.jpg204240": {
+      "filename": "46.jpg",
+      "size": 204240,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "47.jpg217571": {
+      "filename": "47.jpg",
+      "size": 217571,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "48.jpg212438": {
+      "filename": "48.jpg",
+      "size": 212438,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "49.jpg233654": {
+      "filename": "49.jpg",
+      "size": 233654,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "50.jpg260984": {
+      "filename": "50.jpg",
+      "size": 260984,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "51.jpg235241": {
+      "filename": "51.jpg",
+      "size": 235241,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "52.jpg240090": {
+      "filename": "52.jpg",
+      "size": 240090,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "53.jpg245983": {
+      "filename": "53.jpg",
+      "size": 245983,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "54.jpg262010": {
+      "filename": "54.jpg",
+      "size": 262010,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "55.jpg239644": {
+      "filename": "55.jpg",
+      "size": 239644,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "56.jpg242644": {
+      "filename": "56.jpg",
+      "size": 242644,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "57.jpg232556": {
+      "filename": "57.jpg",
+      "size": 232556,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "58.jpg200639": {
+      "filename": "58.jpg",
+      "size": 200639,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "59.jpg174710": {
+      "filename": "59.jpg",
+      "size": 174710,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "60.jpg204508": {
+      "filename": "60.jpg",
+      "size": 204508,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "61.jpg237131": {
+      "filename": "61.jpg",
+      "size": 237131,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              205,
+              225,
+              251,
+              307,
+              380,
+              404,
+              414,
+              469,
+              516,
+              551,
+              572,
+              571,
+              485,
+              367,
+              296,
+              219,
+              205,
+              205
+            ],
+            "all_points_y": [
+              474,
+              494,
+              510,
+              519,
+              508,
+              498,
+              483,
+              433,
+              402,
+              381,
+              349,
+              334,
+              361,
+              395,
+              418,
+              454,
+              463,
+              473
+            ]
+          },
+          "region_attributes": {
+            "front": "leftheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "62.jpg235922": {
+      "filename": "62.jpg",
+      "size": 235922,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              268,
+              294,
+              322,
+              412,
+              442,
+              508,
+              576,
+              594,
+              505,
+              377,
+              293,
+              272,
+              266
+            ],
+            "all_points_y": [
+              438,
+              467,
+              477,
+              474,
+              466,
+              401,
+              361,
+              325,
+              347,
+              381,
+              417,
+              426,
+              435
+            ]
+          },
+          "region_attributes": {
+            "front": "leftheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "63.jpg225043": {
+      "filename": "63.jpg",
+      "size": 225043,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              241,
+              257,
+              304,
+              531,
+              553,
+              542,
+              531,
+              488,
+              440,
+              390,
+              324,
+              276,
+              256,
+              241
+            ],
+            "all_points_y": [
+              380,
+              365,
+              347,
+              287,
+              281,
+              300,
+              313,
+              334,
+              367,
+              409,
+              415,
+              412,
+              398,
+              381
+            ]
+          },
+          "region_attributes": {
+            "front": "leftheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "64.jpg236443": {
+      "filename": "64.jpg",
+      "size": 236443,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              226,
+              248,
+              390,
+              516,
+              511,
+              500,
+              463,
+              415,
+              367,
+              330,
+              268,
+              250,
+              225
+            ],
+            "all_points_y": [
+              452,
+              435,
+              383,
+              343,
+              359,
+              378,
+              393,
+              430,
+              476,
+              482,
+              488,
+              476,
+              454
+            ]
+          },
+          "region_attributes": {
+            "front": "leftheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "65.jpg235730": {
+      "filename": "65.jpg",
+      "size": 235730,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              217,
+              232,
+              275,
+              412,
+              505,
+              501,
+              489,
+              455,
+              406,
+              370,
+              350,
+              294,
+              251,
+              235,
+              217
+            ],
+            "all_points_y": [
+              435,
+              423,
+              405,
+              358,
+              328,
+              347,
+              359,
+              378,
+              414,
+              452,
+              466,
+              473,
+              470,
+              461,
+              440
+            ]
+          },
+          "region_attributes": {
+            "front": "leftheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "66.jpg234103": {
+      "filename": "66.jpg",
+      "size": 234103,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              253,
+              272,
+              349,
+              532,
+              528,
+              516,
+              486,
+              439,
+              399,
+              380,
+              325,
+              284,
+              265,
+              253
+            ],
+            "all_points_y": [
+              401,
+              386,
+              358,
+              302,
+              321,
+              333,
+              349,
+              380,
+              418,
+              430,
+              439,
+              433,
+              418,
+              402
+            ]
+          },
+          "region_attributes": {
+            "front": "leftheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "67.jpg201122": {
+      "filename": "67.jpg",
+      "size": 201122,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "68.jpg182421": {
+      "filename": "68.jpg",
+      "size": 182421,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "69.jpg197777": {
+      "filename": "69.jpg",
+      "size": 197777,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "70.jpg198962": {
+      "filename": "70.jpg",
+      "size": 198962,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "71.jpg173763": {
+      "filename": "71.jpg",
+      "size": 173763,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "72.jpg215162": {
+      "filename": "72.jpg",
+      "size": 215162,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              634,
+              681,
+              702,
+              708,
+              708,
+              693,
+              674,
+              650,
+              636,
+              627,
+              634
+            ],
+            "all_points_y": [
+              387,
+              383,
+              383,
+              374,
+              362,
+              358,
+              364,
+              371,
+              375,
+              384,
+              387
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "frontdoorhandle\n",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              1048,
+              1080,
+              1103,
+              1110,
+              1104,
+              1083,
+              1067,
+              1048,
+              1045,
+              1048
+            ],
+            "all_points_y": [
+              319,
+              321,
+              318,
+              306,
+              297,
+              299,
+              303,
+              310,
+              318,
+              319
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "reardoorhandle\n",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              794,
+              797,
+              902,
+              1044,
+              1114,
+              1069,
+              1020,
+              943,
+              792
+            ],
+            "all_points_y": [
+              140,
+              281,
+              272,
+              248,
+              229,
+              191,
+              161,
+              151,
+              142
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "reardoorwindow\n",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              775,
+              773,
+              769,
+              766,
+              761,
+              757,
+              751,
+              752,
+              905,
+              971,
+              1014,
+              1098,
+              1144,
+              1166,
+              1168,
+              1110,
+              1048,
+              1011,
+              965,
+              811,
+              770
+            ],
+            "all_points_y": [
+              135,
+              219,
+              328,
+              361,
+              417,
+              479,
+              505,
+              534,
+              516,
+              504,
+              476,
+              395,
+              340,
+              284,
+              254,
+              207,
+              160,
+              149,
+              142,
+              133,
+              133
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "reardoor\n",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "73.jpg222521": {
+      "filename": "73.jpg",
+      "size": 222521,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              628,
+              677,
+              701,
+              707,
+              707,
+              695,
+              643,
+              624,
+              625,
+              631
+            ],
+            "all_points_y": [
+              377,
+              374,
+              372,
+              362,
+              349,
+              347,
+              358,
+              365,
+              377,
+              377
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "frontdoorhandle\n",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              1048,
+              1079,
+              1100,
+              1104,
+              1104,
+              1097,
+              1076,
+              1052,
+              1045,
+              1041,
+              1046
+            ],
+            "all_points_y": [
+              313,
+              310,
+              310,
+              300,
+              290,
+              288,
+              291,
+              300,
+              304,
+              312,
+              313
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "reardoorhandle\n",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              795,
+              797,
+              910,
+              983,
+              1113,
+              1078,
+              1026,
+              986,
+              936,
+              797
+            ],
+            "all_points_y": [
+              127,
+              269,
+              262,
+              253,
+              219,
+              185,
+              152,
+              143,
+              137,
+              127
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "reardoorwindow\n",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "74.jpg220335": {
+      "filename": "74.jpg",
+      "size": 220335,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              695,
+              715,
+              769,
+              859,
+              1044,
+              1029,
+              978,
+              931,
+              900,
+              801,
+              717,
+              693,
+              693
+            ],
+            "all_points_y": [
+              174,
+              322,
+              315,
+              302,
+              245,
+              223,
+              195,
+              177,
+              173,
+              170,
+              170,
+              167,
+              174
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "reardoorwindow\n",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              550,
+              593,
+              630,
+              634,
+              633,
+              616,
+              594,
+              560,
+              541,
+              541,
+              550
+            ],
+            "all_points_y": [
+              460,
+              452,
+              446,
+              435,
+              424,
+              421,
+              424,
+              438,
+              446,
+              454,
+              458
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "frontdoorhandle\n",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              996,
+              1030,
+              1046,
+              1054,
+              1042,
+              1011,
+              989,
+              989,
+              996
+            ],
+            "all_points_y": [
+              347,
+              343,
+              340,
+              324,
+              318,
+              328,
+              341,
+              347,
+              349
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "reardoorhandle\n",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "75.jpg225629": {
+      "filename": "75.jpg",
+      "size": 225629,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "76.jpg196230": {
+      "filename": "76.jpg",
+      "size": 196230,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "77.jpg185520": {
+      "filename": "77.jpg",
+      "size": 185520,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "78.jpg198136": {
+      "filename": "78.jpg",
+      "size": 198136,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "79.jpg208921": {
+      "filename": "79.jpg",
+      "size": 208921,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "80.jpg205433": {
+      "filename": "80.jpg",
+      "size": 205433,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "81.jpg212140": {
+      "filename": "81.jpg",
+      "size": 212140,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "82.jpg197947": {
+      "filename": "82.jpg",
+      "size": 197947,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              489,
+              473,
+              495,
+              520,
+              551,
+              699,
+              834,
+              943,
+              977,
+              998,
+              1023,
+              1029,
+              1024,
+              1011,
+              996,
+              887,
+              720,
+              551,
+              491
+            ],
+            "all_points_y": [
+              214,
+              251,
+              331,
+              377,
+              399,
+              412,
+              412,
+              406,
+              395,
+              372,
+              303,
+              273,
+              250,
+              241,
+              254,
+              269,
+              269,
+              241,
+              214
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "tailgate",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "83.jpg227219": {
+      "filename": "83.jpg",
+      "size": 227219,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              452,
+              440,
+              438,
+              454,
+              467,
+              491,
+              531,
+              659,
+              779,
+              848,
+              872,
+              899,
+              915,
+              927,
+              919,
+              915,
+              884,
+              856,
+              717,
+              578,
+              495,
+              451
+            ],
+            "all_points_y": [
+              269,
+              285,
+              322,
+              364,
+              393,
+              412,
+              426,
+              435,
+              433,
+              432,
+              424,
+              402,
+              358,
+              322,
+              304,
+              297,
+              307,
+              313,
+              313,
+              304,
+              290,
+              269
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "tailgate",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              401,
+              406,
+              421,
+              445,
+              432,
+              435,
+              443,
+              445,
+              448,
+              461,
+              421,
+              375,
+              352,
+              346,
+              358,
+              395,
+              401
+            ],
+            "all_points_y": [
+              166,
+              208,
+              241,
+              268,
+              294,
+              325,
+              355,
+              362,
+              365,
+              387,
+              380,
+              364,
+              337,
+              294,
+              231,
+              171,
+              167
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "lefttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              356,
+              321,
+              294,
+              288,
+              297,
+              318,
+              412,
+              451,
+              673,
+              845,
+              874,
+              959,
+              981,
+              992,
+              987,
+              967,
+              927,
+              900,
+              874,
+              754,
+              724,
+              714,
+              664,
+              650,
+              553,
+              498,
+              464,
+              455,
+              412,
+              355
+            ],
+            "all_points_y": [
+              358,
+              372,
+              415,
+              464,
+              542,
+              560,
+              569,
+              565,
+              571,
+              565,
+              569,
+              553,
+              492,
+              430,
+              401,
+              383,
+              405,
+              409,
+              435,
+              446,
+              442,
+              448,
+              448,
+              440,
+              435,
+              430,
+              404,
+              390,
+              383,
+              356
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "bumper\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "84.jpg249502": {
+      "filename": "84.jpg",
+      "size": 249502,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              412,
+              457,
+              544,
+              649,
+              735,
+              797,
+              814,
+              825,
+              826,
+              817,
+              798,
+              785,
+              760,
+              621,
+              571,
+              457,
+              427,
+              404,
+              398,
+              406,
+              415
+            ],
+            "all_points_y": [
+              266,
+              284,
+              296,
+              299,
+              296,
+              287,
+              276,
+              284,
+              306,
+              343,
+              375,
+              387,
+              398,
+              402,
+              401,
+              390,
+              374,
+              325,
+              290,
+              268,
+              266
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "tailgate\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              338,
+              315,
+              307,
+              299,
+              307,
+              313,
+              393,
+              433,
+              513,
+              757,
+              794,
+              811,
+              885,
+              893,
+              900,
+              897,
+              871,
+              851,
+              806,
+              783,
+              751,
+              643,
+              627,
+              594,
+              584,
+              516,
+              463,
+              427,
+              415,
+              372,
+              338
+            ],
+            "all_points_y": [
+              341,
+              356,
+              378,
+              443,
+              498,
+              505,
+              520,
+              514,
+              520,
+              519,
+              516,
+              525,
+              517,
+              507,
+              387,
+              371,
+              352,
+              365,
+              372,
+              396,
+              406,
+              411,
+              414,
+              414,
+              404,
+              402,
+              399,
+              384,
+              368,
+              358,
+              340
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "bumper\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              374,
+              377,
+              390,
+              402,
+              392,
+              398,
+              415,
+              389,
+              353,
+              334,
+              341,
+              372
+            ],
+            "all_points_y": [
+              185,
+              223,
+              248,
+              262,
+              284,
+              321,
+              362,
+              358,
+              340,
+              315,
+              251,
+              188
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "lefttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              850,
+              865,
+              878,
+              885,
+              878,
+              862,
+              837,
+              810,
+              825,
+              835,
+              832,
+              826,
+              841,
+              847,
+              854
+            ],
+            "all_points_y": [
+              204,
+              219,
+              248,
+              300,
+              340,
+              352,
+              364,
+              367,
+              337,
+              309,
+              287,
+              270,
+              254,
+              232,
+              202
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "righttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              380,
+              383,
+              399,
+              418,
+              470,
+              565,
+              674,
+              741,
+              800,
+              826,
+              842,
+              842,
+              755,
+              616,
+              457,
+              406,
+              383
+            ],
+            "all_points_y": [
+              180,
+              213,
+              248,
+              256,
+              276,
+              285,
+              290,
+              287,
+              279,
+              262,
+              229,
+              195,
+              179,
+              168,
+              173,
+              179,
+              180
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "windshield\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "85.jpg244340": {
+      "filename": "85.jpg",
+      "size": 244340,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              347,
+              328,
+              313,
+              307,
+              304,
+              306,
+              312,
+              331,
+              390,
+              374,
+              361,
+              368,
+              380,
+              361,
+              352,
+              346
+            ],
+            "all_points_y": [
+              191,
+              222,
+              259,
+              299,
+              316,
+              328,
+              343,
+              359,
+              375,
+              341,
+              307,
+              282,
+              270,
+              254,
+              223,
+              188
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "lefttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              832,
+              832,
+              823,
+              804,
+              811,
+              814,
+              806,
+              788,
+              826,
+              847,
+              862,
+              869,
+              863,
+              831
+            ],
+            "all_points_y": [
+              205,
+              235,
+              260,
+              279,
+              294,
+              316,
+              347,
+              380,
+              372,
+              364,
+              353,
+              316,
+              259,
+              202
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "righttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              383,
+              415,
+              525,
+              680,
+              773,
+              798,
+              808,
+              810,
+              785,
+              782,
+              754,
+              684,
+              566,
+              449,
+              412,
+              393,
+              372,
+              374,
+              387
+            ],
+            "all_points_y": [
+              269,
+              285,
+              299,
+              304,
+              294,
+              284,
+              299,
+              316,
+              375,
+              384,
+              401,
+              406,
+              405,
+              402,
+              390,
+              368,
+              309,
+              285,
+              270
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              313,
+              282,
+              275,
+              275,
+              279,
+              321,
+              380,
+              417,
+              576,
+              736,
+              775,
+              786,
+              869,
+              885,
+              890,
+              884,
+              882,
+              859,
+              828,
+              788,
+              757,
+              662,
+              619,
+              607,
+              569,
+              559,
+              461,
+              421,
+              389,
+              359,
+              327,
+              313
+            ],
+            "all_points_y": [
+              349,
+              371,
+              432,
+              485,
+              510,
+              523,
+              534,
+              523,
+              532,
+              529,
+              525,
+              535,
+              526,
+              505,
+              430,
+              387,
+              380,
+              359,
+              378,
+              386,
+              408,
+              414,
+              412,
+              423,
+              423,
+              414,
+              409,
+              405,
+              384,
+              372,
+              362,
+              349
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "bumper\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              358,
+              359,
+              350,
+              361,
+              377,
+              399,
+              438,
+              593,
+              674,
+              752,
+              783,
+              798,
+              820,
+              829,
+              829,
+              811,
+              693,
+              529,
+              417,
+              358
+            ],
+            "all_points_y": [
+              188,
+              188,
+              204,
+              239,
+              259,
+              269,
+              281,
+              297,
+              299,
+              291,
+              284,
+              275,
+              256,
+              232,
+              207,
+              195,
+              180,
+              177,
+              177,
+              186
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "windshield\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "86.jpg238144": {
+      "filename": "86.jpg",
+      "size": 238144,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              371,
+              404,
+              537,
+              693,
+              795,
+              851,
+              848,
+              826,
+              817,
+              808,
+              775,
+              689,
+              584,
+              486,
+              421,
+              390,
+              375,
+              374
+            ],
+            "all_points_y": [
+              185,
+              171,
+              166,
+              177,
+              194,
+              210,
+              232,
+              272,
+              279,
+              279,
+              293,
+              299,
+              294,
+              284,
+              269,
+              250,
+              222,
+              186
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "windshield\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              386,
+              381,
+              387,
+              398,
+              418,
+              508,
+              602,
+              677,
+              745,
+              775,
+              789,
+              813,
+              822,
+              814,
+              811,
+              779,
+              712,
+              590,
+              486,
+              435,
+              409,
+              395,
+              381
+            ],
+            "all_points_y": [
+              269,
+              293,
+              331,
+              359,
+              386,
+              402,
+              409,
+              412,
+              409,
+              401,
+              383,
+              344,
+              312,
+              290,
+              285,
+              299,
+              307,
+              300,
+              293,
+              281,
+              270,
+              263,
+              270
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "tailgate\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              368,
+              368,
+              383,
+              383,
+              383,
+              372,
+              378,
+              392,
+              393,
+              395,
+              361,
+              325,
+              318,
+              334,
+              350,
+              367
+            ],
+            "all_points_y": [
+              189,
+              222,
+              251,
+              254,
+              262,
+              284,
+              313,
+              355,
+              358,
+              362,
+              352,
+              334,
+              302,
+              253,
+              213,
+              189
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "lefttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              854,
+              875,
+              882,
+              881,
+              868,
+              823,
+              792,
+              816,
+              832,
+              819,
+              838,
+              854,
+              854
+            ],
+            "all_points_y": [
+              211,
+              251,
+              288,
+              334,
+              368,
+              383,
+              386,
+              350,
+              313,
+              284,
+              265,
+              226,
+              213
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "righttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              324,
+              293,
+              285,
+              281,
+              288,
+              338,
+              368,
+              401,
+              498,
+              675,
+              769,
+              785,
+              857,
+              879,
+              896,
+              896,
+              891,
+              875,
+              872,
+              848,
+              788,
+              764,
+              619,
+              605,
+              563,
+              551,
+              451,
+              411,
+              389,
+              347,
+              324
+            ],
+            "all_points_y": [
+              336,
+              355,
+              404,
+              473,
+              503,
+              513,
+              523,
+              514,
+              526,
+              531,
+              532,
+              538,
+              538,
+              531,
+              472,
+              396,
+              384,
+              372,
+              371,
+              381,
+              395,
+              414,
+              415,
+              421,
+              418,
+              411,
+              402,
+              389,
+              368,
+              352,
+              337
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "bumper\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "87.jpg248006": {
+      "filename": "87.jpg",
+      "size": 248006,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              374,
+              370,
+              386,
+              423,
+              480,
+              605,
+              718,
+              794,
+              816,
+              840,
+              847,
+              826,
+              752,
+              624,
+              476,
+              409,
+              384,
+              374
+            ],
+            "all_points_y": [
+              191,
+              228,
+              256,
+              272,
+              284,
+              296,
+              296,
+              285,
+              272,
+              245,
+              210,
+              195,
+              183,
+              176,
+              171,
+              177,
+              180,
+              194
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "windshield\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              393,
+              381,
+              383,
+              396,
+              404,
+              427,
+              542,
+              605,
+              678,
+              738,
+              766,
+              788,
+              808,
+              819,
+              811,
+              786,
+              687,
+              641,
+              513,
+              421,
+              395,
+              383
+            ],
+            "all_points_y": [
+              263,
+              273,
+              309,
+              355,
+              372,
+              390,
+              404,
+              406,
+              409,
+              409,
+              402,
+              381,
+              333,
+              304,
+              284,
+              293,
+              302,
+              302,
+              294,
+              278,
+              268,
+              276
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "tailgate\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              322,
+              294,
+              285,
+              285,
+              293,
+              333,
+              383,
+              399,
+              532,
+              671,
+              751,
+              779,
+              795,
+              853,
+              874,
+              885,
+              897,
+              900,
+              899,
+              863,
+              838,
+              788,
+              769,
+              741,
+              673,
+              622,
+              610,
+              575,
+              559,
+              445,
+              412,
+              389,
+              338,
+              324
+            ],
+            "all_points_y": [
+              333,
+              359,
+              426,
+              472,
+              500,
+              513,
+              516,
+              513,
+              523,
+              531,
+              529,
+              528,
+              537,
+              537,
+              532,
+              523,
+              449,
+              399,
+              386,
+              364,
+              380,
+              387,
+              405,
+              414,
+              414,
+              412,
+              417,
+              417,
+              409,
+              402,
+              390,
+              362,
+              347,
+              337
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "bumper\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "88.jpg247337": {
+      "filename": "88.jpg",
+      "size": 247337,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              367,
+              361,
+              368,
+              384,
+              414,
+              495,
+              591,
+              699,
+              752,
+              801,
+              820,
+              840,
+              845,
+              810,
+              698,
+              588,
+              485,
+              406,
+              365
+            ],
+            "all_points_y": [
+              174,
+              207,
+              231,
+              251,
+              266,
+              279,
+              284,
+              287,
+              282,
+              269,
+              254,
+              223,
+              192,
+              176,
+              166,
+              157,
+              157,
+              161,
+              176
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "windshield\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              380,
+              375,
+              387,
+              401,
+              426,
+              525,
+              606,
+              671,
+              730,
+              752,
+              779,
+              798,
+              814,
+              813,
+              806,
+              777,
+              715,
+              609,
+              548,
+              458,
+              417,
+              381
+            ],
+            "all_points_y": [
+              260,
+              291,
+              341,
+              362,
+              380,
+              390,
+              395,
+              398,
+              396,
+              392,
+              374,
+              343,
+              304,
+              278,
+              269,
+              284,
+              293,
+              291,
+              287,
+              279,
+              273,
+              259
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "tailgate\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              321,
+              290,
+              284,
+              282,
+              288,
+              340,
+              383,
+              411,
+              516,
+              664,
+              735,
+              786,
+              797,
+              868,
+              881,
+              900,
+              900,
+              902,
+              862,
+              822,
+              786,
+              755,
+              693,
+              616,
+              607,
+              560,
+              554,
+              473,
+              426,
+              398,
+              389,
+              352,
+              316
+            ],
+            "all_points_y": [
+              330,
+              349,
+              404,
+              472,
+              494,
+              504,
+              511,
+              505,
+              517,
+              519,
+              520,
+              522,
+              531,
+              523,
+              514,
+              451,
+              399,
+              378,
+              350,
+              367,
+              372,
+              398,
+              405,
+              405,
+              414,
+              406,
+              401,
+              395,
+              387,
+              372,
+              361,
+              352,
+              330
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "bumper\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "89.jpg243691": {
+      "filename": "89.jpg",
+      "size": 243691,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              309,
+              333,
+              433,
+              511,
+              639,
+              727,
+              816,
+              826,
+              811,
+              785,
+              766,
+              749,
+              717,
+              634,
+              588,
+              526,
+              438,
+              377,
+              328,
+              309,
+              309,
+              310
+            ],
+            "all_points_y": [
+              202,
+              188,
+              179,
+              180,
+              183,
+              192,
+              204,
+              217,
+              256,
+              288,
+              296,
+              300,
+              307,
+              313,
+              313,
+              313,
+              307,
+              299,
+              281,
+              251,
+              220,
+              204
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "windshield\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              324,
+              316,
+              322,
+              333,
+              352,
+              378,
+              505,
+              597,
+              692,
+              732,
+              755,
+              785,
+              786,
+              780,
+              738,
+              641,
+              511,
+              429,
+              374,
+              324
+            ],
+            "all_points_y": [
+              287,
+              310,
+              346,
+              387,
+              409,
+              420,
+              429,
+              435,
+              432,
+              420,
+              401,
+              343,
+              310,
+              297,
+              310,
+              319,
+              318,
+              312,
+              307,
+              284
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "tailgate\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              262,
+              231,
+              223,
+              223,
+              228,
+              262,
+              328,
+              362,
+              526,
+              678,
+              745,
+              773,
+              851,
+              868,
+              879,
+              885,
+              879,
+              841,
+              792,
+              757,
+              723,
+              615,
+              572,
+              559,
+              516,
+              511,
+              380,
+              344,
+              324,
+              282,
+              257
+            ],
+            "all_points_y": [
+              359,
+              384,
+              420,
+              511,
+              537,
+              547,
+              556,
+              550,
+              562,
+              562,
+              563,
+              572,
+              565,
+              554,
+              485,
+              417,
+              405,
+              384,
+              405,
+              411,
+              438,
+              445,
+              442,
+              448,
+              443,
+              435,
+              432,
+              415,
+              392,
+              380,
+              361
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "bumper\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "90.jpg239862": {
+      "filename": "90.jpg",
+      "size": 239862,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              229,
+              205,
+              204,
+              216,
+              266,
+              370,
+              528,
+              605,
+              665,
+              714,
+              746,
+              758,
+              721,
+              649,
+              489,
+              375,
+              279,
+              225
+            ],
+            "all_points_y": [
+              180,
+              229,
+              262,
+              285,
+              307,
+              321,
+              330,
+              328,
+              313,
+              288,
+              239,
+              210,
+              198,
+              180,
+              166,
+              170,
+              171,
+              180
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "windshield\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              764,
+              785,
+              794,
+              797,
+              791,
+              779,
+              760,
+              729,
+              693,
+              625,
+              659,
+              680,
+              681,
+              675,
+              709,
+              724,
+              748,
+              761
+            ],
+            "all_points_y": [
+              216,
+              251,
+              265,
+              284,
+              325,
+              365,
+              402,
+              426,
+              436,
+              445,
+              405,
+              358,
+              328,
+              315,
+              297,
+              282,
+              244,
+              214
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "righttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              204,
+              195,
+              191,
+              194,
+              220,
+              307,
+              420,
+              501,
+              575,
+              605,
+              627,
+              664,
+              678,
+              667,
+              628,
+              563,
+              418,
+              297,
+              242,
+              204
+            ],
+            "all_points_y": [
+              281,
+              290,
+              325,
+              398,
+              426,
+              446,
+              461,
+              469,
+              473,
+              460,
+              435,
+              384,
+              343,
+              315,
+              330,
+              334,
+              331,
+              316,
+              303,
+              279
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "tailgate\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "91.jpg237950": {
+      "filename": "91.jpg",
+      "size": 237950,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              689,
+              715,
+              726,
+              727,
+              717,
+              704,
+              680,
+              667,
+              637,
+              609,
+              556,
+              523,
+              562,
+              584,
+              585,
+              584,
+              621,
+              655,
+              680,
+              686
+            ],
+            "all_points_y": [
+              180,
+              217,
+              242,
+              260,
+              294,
+              334,
+              371,
+              389,
+              408,
+              417,
+              426,
+              429,
+              384,
+              338,
+              299,
+              285,
+              269,
+              239,
+              197,
+              183
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "righttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              133,
+              124,
+              117,
+              114,
+              115,
+              136,
+              205,
+              330,
+              420,
+              482,
+              516,
+              554,
+              578,
+              585,
+              576,
+              523,
+              451,
+              356,
+              250,
+              189,
+              155,
+              132
+            ],
+            "all_points_y": [
+              242,
+              247,
+              268,
+              328,
+              372,
+              395,
+              417,
+              438,
+              448,
+              449,
+              429,
+              381,
+              328,
+              306,
+              293,
+              304,
+              306,
+              303,
+              285,
+              275,
+              265,
+              241
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "tailgate\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "92.jpg246047": {
+      "filename": "92.jpg",
+      "size": 246047,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              304,
+              309,
+              303,
+              279,
+              247,
+              282,
+              343,
+              386,
+              440,
+              473,
+              488,
+              479,
+              445,
+              412,
+              375,
+              307
+            ],
+            "all_points_y": [
+              296,
+              310,
+              338,
+              380,
+              426,
+              426,
+              415,
+              387,
+              336,
+              282,
+              248,
+              222,
+              185,
+              219,
+              254,
+              297
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "righttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "93.jpg235171": {
+      "filename": "93.jpg",
+      "size": 235171,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              275,
+              278,
+              220,
+              256,
+              306,
+              353,
+              396,
+              433,
+              446,
+              451,
+              448,
+              405,
+              371,
+              315,
+              279
+            ],
+            "all_points_y": [
+              285,
+              304,
+              398,
+              399,
+              390,
+              358,
+              319,
+              272,
+              251,
+              234,
+              223,
+              185,
+              217,
+              260,
+              284
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "righttaillight\n",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "94.jpg236033": {
+      "filename": "94.jpg",
+      "size": 236033,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              507,
+              548,
+              565,
+              559,
+              497,
+              486,
+              489,
+              507
+            ],
+            "all_points_y": [
+              377,
+              374,
+              367,
+              355,
+              346,
+              355,
+              367,
+              377
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              723,
+              751,
+              752,
+              653,
+              500,
+              448,
+              507,
+              531,
+              565,
+              612,
+              723
+            ],
+            "all_points_y": [
+              180,
+              284,
+              293,
+              288,
+              278,
+              270,
+              217,
+              202,
+              194,
+              186,
+              180
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorwindow",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "95.jpg238866": {
+      "filename": "95.jpg",
+      "size": 238866,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              500,
+              548,
+              559,
+              541,
+              501,
+              482,
+              482,
+              492,
+              498
+            ],
+            "all_points_y": [
+              378,
+              378,
+              371,
+              358,
+              353,
+              358,
+              365,
+              375,
+              378
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              736,
+              664,
+              581,
+              545,
+              513,
+              451,
+              477,
+              582,
+              643,
+              760,
+              752,
+              738,
+              735
+            ],
+            "all_points_y": [
+              195,
+              197,
+              205,
+              213,
+              226,
+              281,
+              287,
+              303,
+              310,
+              310,
+              241,
+              191,
+              195
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorwindow\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              758,
+              769,
+              782,
+              800,
+              807,
+              803,
+              791,
+              788,
+              671,
+              612,
+              587,
+              482,
+              414,
+              401,
+              408,
+              432,
+              485,
+              531,
+              593,
+              717,
+              752,
+              755
+            ],
+            "all_points_y": [
+              186,
+              234,
+              309,
+              337,
+              387,
+              440,
+              485,
+              514,
+              532,
+              544,
+              535,
+              445,
+              372,
+              340,
+              318,
+              282,
+              232,
+              204,
+              194,
+              183,
+              185,
+              185
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoor\n",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "96.jpg221050": {
+      "filename": "96.jpg",
+      "size": 221050,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              406,
+              452,
+              488,
+              517,
+              603,
+              730,
+              736,
+              742,
+              665,
+              565,
+              404
+            ],
+            "all_points_y": [
+              257,
+              222,
+              202,
+              192,
+              183,
+              180,
+              236,
+              299,
+              299,
+              291,
+              259
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorwindow\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              433,
+              458,
+              497,
+              507,
+              501,
+              473,
+              443,
+              433,
+              427,
+              427,
+              436
+            ],
+            "all_points_y": [
+              353,
+              358,
+              356,
+              353,
+              344,
+              336,
+              330,
+              333,
+              334,
+              344,
+              353
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              748,
+              767,
+              780,
+              780,
+              782,
+              775,
+              766,
+              760,
+              622,
+              568,
+              538,
+              457,
+              381,
+              352,
+              346,
+              365,
+              390,
+              467,
+              519,
+              634,
+              748
+            ],
+            "all_points_y": [
+              174,
+              299,
+              337,
+              378,
+              401,
+              446,
+              480,
+              513,
+              520,
+              523,
+              514,
+              451,
+              372,
+              331,
+              309,
+              281,
+              251,
+              197,
+              180,
+              173,
+              173
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoor",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "97.jpg227503": {
+      "filename": "97.jpg",
+      "size": 227503,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              405,
+              454,
+              466,
+              466,
+              442,
+              433,
+              393,
+              389,
+              387,
+              393,
+              408
+            ],
+            "all_points_y": [
+              344,
+              347,
+              344,
+              336,
+              328,
+              325,
+              321,
+              325,
+              330,
+              341,
+              346
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              364,
+              448,
+              542,
+              699,
+              684,
+              637,
+              542,
+              477,
+              430,
+              398,
+              364
+            ],
+            "all_points_y": [
+              250,
+              266,
+              281,
+              291,
+              168,
+              170,
+              171,
+              180,
+              195,
+              214,
+              248
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorwindow\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              699,
+              727,
+              736,
+              741,
+              745,
+              736,
+              730,
+              729,
+              616,
+              547,
+              520,
+              432,
+              361,
+              327,
+              306,
+              306,
+              344,
+              404,
+              446,
+              494,
+              615,
+              701
+            ],
+            "all_points_y": [
+              163,
+              293,
+              316,
+              336,
+              384,
+              454,
+              480,
+              495,
+              507,
+              513,
+              507,
+              449,
+              377,
+              343,
+              312,
+              288,
+              247,
+              202,
+              180,
+              168,
+              160,
+              160
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoor\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              798,
+              832,
+              847,
+              837,
+              800,
+              791,
+              780,
+              791,
+              797
+            ],
+            "all_points_y": [
+              370,
+              370,
+              359,
+              350,
+              346,
+              346,
+              353,
+              365,
+              368
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "frontdoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "98.jpg173090": {
+      "filename": "98.jpg",
+      "size": 173090,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "99.jpg224927": {
+      "filename": "99.jpg",
+      "size": 224927,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              395,
+              430,
+              461,
+              464,
+              454,
+              412,
+              396,
+              387,
+              384,
+              398
+            ],
+            "all_points_y": [
+              349,
+              352,
+              347,
+              341,
+              336,
+              328,
+              328,
+              328,
+              336,
+              350
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              673,
+              690,
+              541,
+              356,
+              411,
+              451,
+              507,
+              671,
+              673
+            ],
+            "all_points_y": [
+              177,
+              296,
+              288,
+              259,
+              213,
+              195,
+              183,
+              173,
+              177
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorwindow\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              687,
+              709,
+              717,
+              730,
+              736,
+              729,
+              721,
+              723,
+              562,
+              528,
+              486,
+              392,
+              321,
+              306,
+              313,
+              352,
+              421,
+              442,
+              491,
+              667,
+              687
+            ],
+            "all_points_y": [
+              166,
+              269,
+              294,
+              330,
+              392,
+              455,
+              480,
+              495,
+              510,
+              508,
+              491,
+              415,
+              343,
+              306,
+              284,
+              247,
+              197,
+              188,
+              177,
+              164,
+              166
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoor\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              780,
+              816,
+              826,
+              832,
+              828,
+              797,
+              782,
+              772,
+              776,
+              786
+            ],
+            "all_points_y": [
+              368,
+              368,
+              365,
+              364,
+              356,
+              347,
+              349,
+              353,
+              364,
+              367
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "frontdoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "100.jpg241096": {
+      "filename": "100.jpg",
+      "size": 241096,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              383,
+              408,
+              432,
+              439,
+              438,
+              406,
+              372,
+              364,
+              361,
+              365,
+              383
+            ],
+            "all_points_y": [
+              340,
+              340,
+              340,
+              334,
+              327,
+              316,
+              313,
+              318,
+              325,
+              334,
+              340
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              644,
+              547,
+              467,
+              426,
+              378,
+              334,
+              402,
+              486,
+              569,
+              665,
+              649,
+              644
+            ],
+            "all_points_y": [
+              161,
+              164,
+              173,
+              180,
+              207,
+              244,
+              257,
+              270,
+              278,
+              282,
+              158,
+              158
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorwindow\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              667,
+              692,
+              708,
+              715,
+              708,
+              704,
+              613,
+              526,
+              501,
+              458,
+              367,
+              300,
+              279,
+              284,
+              294,
+              330,
+              384,
+              421,
+              449,
+              528,
+              612,
+              664
+            ],
+            "all_points_y": [
+              154,
+              282,
+              315,
+              383,
+              446,
+              483,
+              491,
+              498,
+              497,
+              473,
+              402,
+              338,
+              306,
+              285,
+              269,
+              232,
+              192,
+              173,
+              166,
+              157,
+              151,
+              151
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoor\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              758,
+              782,
+              801,
+              810,
+              804,
+              788,
+              767,
+              752,
+              748,
+              754,
+              761
+            ],
+            "all_points_y": [
+              356,
+              355,
+              353,
+              349,
+              341,
+              338,
+              334,
+              337,
+              343,
+              355,
+              358
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "frontdoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "101.jpg232511": {
+      "filename": "101.jpg",
+      "size": 232511,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              393,
+              435,
+              451,
+              455,
+              451,
+              408,
+              390,
+              380,
+              383,
+              393
+            ],
+            "all_points_y": [
+              356,
+              358,
+              355,
+              352,
+              344,
+              336,
+              336,
+              338,
+              349,
+              356
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              777,
+              803,
+              817,
+              826,
+              826,
+              795,
+              775,
+              767,
+              772,
+              780
+            ],
+            "all_points_y": [
+              370,
+              372,
+              371,
+              367,
+              361,
+              353,
+              352,
+              359,
+              367,
+              370
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "frontdoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              664,
+              684,
+              615,
+              446,
+              352,
+              395,
+              433,
+              472,
+              520,
+              665
+            ],
+            "all_points_y": [
+              179,
+              293,
+              290,
+              278,
+              265,
+              228,
+              205,
+              195,
+              188,
+              180
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorwindow\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              678,
+              708,
+              717,
+              729,
+              732,
+              732,
+              721,
+              720,
+              692,
+              553,
+              511,
+              476,
+              358,
+              306,
+              297,
+              327,
+              398,
+              430,
+              470,
+              603,
+              678
+            ],
+            "all_points_y": [
+              170,
+              291,
+              318,
+              347,
+              381,
+              421,
+              472,
+              498,
+              505,
+              514,
+              513,
+              491,
+              393,
+              331,
+              313,
+              269,
+              213,
+              195,
+              183,
+              173,
+              168
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoor\n",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "102.jpg239652": {
+      "filename": "102.jpg",
+      "size": 239652,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              368,
+              374,
+              402,
+              438,
+              446,
+              448,
+              427,
+              405,
+              386,
+              372,
+              368
+            ],
+            "all_points_y": [
+              338,
+              334,
+              336,
+              343,
+              347,
+              352,
+              356,
+              356,
+              356,
+              353,
+              338
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              656,
+              675,
+              560,
+              470,
+              344,
+              353,
+              399,
+              442,
+              473,
+              550,
+              658
+            ],
+            "all_points_y": [
+              182,
+              299,
+              297,
+              288,
+              268,
+              257,
+              223,
+              201,
+              194,
+              185,
+              180
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorwindow\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              673,
+              695,
+              702,
+              715,
+              721,
+              717,
+              711,
+              711,
+              545,
+              489,
+              409,
+              333,
+              297,
+              290,
+              293,
+              325,
+              380,
+              433,
+              483,
+              655,
+              674
+            ],
+            "all_points_y": [
+              168,
+              259,
+              294,
+              338,
+              386,
+              451,
+              482,
+              497,
+              514,
+              510,
+              449,
+              383,
+              341,
+              318,
+              303,
+              265,
+              220,
+              192,
+              183,
+              171,
+              176
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoor\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              767,
+              801,
+              817,
+              817,
+              803,
+              769,
+              761,
+              755,
+              758,
+              770,
+              772
+            ],
+            "all_points_y": [
+              374,
+              374,
+              368,
+              362,
+              356,
+              352,
+              352,
+              356,
+              368,
+              372,
+              372
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "frontdoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "103.jpg240550": {
+      "filename": "103.jpg",
+      "size": 240550,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              340,
+              380,
+              408,
+              404,
+              370,
+              328,
+              324,
+              330,
+              340
+            ],
+            "all_points_y": [
+              364,
+              364,
+              359,
+              352,
+              343,
+              341,
+              347,
+              358,
+              365
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              612,
+              636,
+              542,
+              469,
+              294,
+              324,
+              374,
+              417,
+              494,
+              615
+            ],
+            "all_points_y": [
+              180,
+              303,
+              299,
+              296,
+              273,
+              248,
+              213,
+              200,
+              189,
+              183
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoorwindow\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              630,
+              658,
+              667,
+              678,
+              684,
+              678,
+              677,
+              675,
+              545,
+              486,
+              443,
+              322,
+              257,
+              239,
+              259,
+              313,
+              341,
+              383,
+              429,
+              523,
+              619,
+              628
+            ],
+            "all_points_y": [
+              174,
+              281,
+              312,
+              347,
+              401,
+              464,
+              492,
+              501,
+              514,
+              523,
+              511,
+              420,
+              358,
+              324,
+              291,
+              238,
+              217,
+              197,
+              185,
+              179,
+              173,
+              173
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "reardoor",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              733,
+              758,
+              777,
+              776,
+              763,
+              729,
+              720,
+              720,
+              721,
+              735
+            ],
+            "all_points_y": [
+              372,
+              372,
+              370,
+              362,
+              358,
+              353,
+              356,
+              361,
+              368,
+              372
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "frontdoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "104.jpg241157": {
+      "filename": "104.jpg",
+      "size": 241157,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              405,
+              458,
+              474,
+              467,
+              417,
+              406,
+              398,
+              387,
+              398,
+              408
+            ],
+            "all_points_y": [
+              393,
+              390,
+              387,
+              374,
+              370,
+              370,
+              370,
+              377,
+              387,
+              393
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "frontdoorhandle\n",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              242,
+              288,
+              316,
+              343,
+              367,
+              371,
+              639,
+              723,
+              738,
+              748,
+              746,
+              735,
+              714,
+              686,
+              619,
+              510,
+              395,
+              284,
+              244
+            ],
+            "all_points_y": [
+              154,
+              266,
+              325,
+              383,
+              477,
+              550,
+              501,
+              486,
+              449,
+              393,
+              350,
+              300,
+              263,
+              245,
+              219,
+              186,
+              161,
+              157,
+              154
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "frontdoor\n",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "105.jpg167035": {
+      "filename": "105.jpg",
+      "size": 167035,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "106.jpg235721": {
+      "filename": "106.jpg",
+      "size": 235721,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "107.jpg246707": {
+      "filename": "107.jpg",
+      "size": 246707,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "108.jpg232519": {
+      "filename": "108.jpg",
+      "size": 232519,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "109.jpg230406": {
+      "filename": "109.jpg",
+      "size": 230406,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "110.jpg227802": {
+      "filename": "110.jpg",
+      "size": 227802,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "111.jpg249972": {
+      "filename": "111.jpg",
+      "size": 249972,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "112.jpg241585": {
+      "filename": "112.jpg",
+      "size": 241585,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "113.jpg227124": {
+      "filename": "113.jpg",
+      "size": 227124,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "114.jpg230349": {
+      "filename": "114.jpg",
+      "size": 230349,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              406,
+              414,
+              414,
+              417,
+              415,
+              412,
+              399,
+              402,
+              439,
+              435,
+              442,
+              451,
+              466,
+              494,
+              528,
+              572,
+              607,
+              643,
+              721,
+              775,
+              723,
+              659,
+              596,
+              560,
+              406
+            ],
+            "all_points_y": [
+              313,
+              358,
+              389,
+              440,
+              511,
+              544,
+              547,
+              560,
+              569,
+              542,
+              537,
+              514,
+              492,
+              479,
+              472,
+              470,
+              476,
+              488,
+              470,
+              443,
+              409,
+              384,
+              365,
+              331,
+              313
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "fender\n\n",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "115.jpg227781": {
+      "filename": "115.jpg",
+      "size": 227781,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              411,
+              458,
+              590,
+              704,
+              761,
+              786,
+              791,
+              785,
+              773,
+              752,
+              689,
+              659,
+              616,
+              544,
+              485,
+              451,
+              427,
+              409
+            ],
+            "all_points_y": [
+              343,
+              350,
+              367,
+              386,
+              395,
+              402,
+              408,
+              426,
+              451,
+              461,
+              474,
+              474,
+              446,
+              412,
+              393,
+              386,
+              370,
+              341
+            ]
+          },
+          "region_attributes": {
+            "front": "",
+            "rear": "",
+            "right": "rightheadlight\n",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "116.jpg227762": {
+      "filename": "116.jpg",
+      "size": 227762,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              353,
+              390,
+              423,
+              486,
+              531,
+              582,
+              599,
+              649,
+              724,
+              748,
+              757,
+              712,
+              627,
+              446,
+              353
+            ],
+            "all_points_y": [
+              346,
+              387,
+              398,
+              423,
+              448,
+              483,
+              497,
+              500,
+              483,
+              457,
+              426,
+              405,
+              392,
+              359,
+              344
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "117.jpg223080": {
+      "filename": "117.jpg",
+      "size": 223080,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "118.jpg245345": {
+      "filename": "118.jpg",
+      "size": 245345,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              304,
+              346,
+              435,
+              542,
+              619,
+              628,
+              612,
+              600,
+              576,
+              545,
+              495,
+              429,
+              384,
+              344,
+              310,
+              302,
+              302
+            ],
+            "all_points_y": [
+              344,
+              362,
+              405,
+              446,
+              477,
+              489,
+              505,
+              517,
+              534,
+              542,
+              541,
+              534,
+              469,
+              421,
+              389,
+              358,
+              343
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "119.jpg248759": {
+      "filename": "119.jpg",
+      "size": 248759,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              426,
+              464,
+              547,
+              624,
+              699,
+              695,
+              674,
+              653,
+              624,
+              581,
+              576,
+              532,
+              505,
+              472,
+              442,
+              432,
+              427,
+              424,
+              423
+            ],
+            "all_points_y": [
+              235,
+              250,
+              287,
+              318,
+              353,
+              364,
+              383,
+              393,
+              401,
+              396,
+              396,
+              387,
+              355,
+              307,
+              281,
+              272,
+              247,
+              235,
+              235
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              590,
+              627,
+              636,
+              637,
+              622,
+              615,
+              602,
+              593,
+              584,
+              584,
+              587
+            ],
+            "all_points_y": [
+              517,
+              514,
+              510,
+              503,
+              486,
+              474,
+              476,
+              479,
+              498,
+              514,
+              517
+            ]
+          },
+          "region_attributes": {
+            "front": "rightfoglamp\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "120.jpg245626": {
+      "filename": "120.jpg",
+      "size": 245626,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              445,
+              503,
+              625,
+              680,
+              702,
+              704,
+              693,
+              668,
+              634,
+              565,
+              542,
+              486,
+              452,
+              448,
+              446
+            ],
+            "all_points_y": [
+              316,
+              340,
+              386,
+              409,
+              420,
+              424,
+              442,
+              460,
+              470,
+              461,
+              455,
+              386,
+              352,
+              341,
+              318
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              600,
+              631,
+              649,
+              649,
+              624,
+              616,
+              599,
+              594,
+              596,
+              599
+            ],
+            "all_points_y": [
+              587,
+              585,
+              578,
+              571,
+              548,
+              544,
+              550,
+              569,
+              585,
+              587
+            ]
+          },
+          "region_attributes": {
+            "front": "rightfoglamp\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "121.jpg257774": {
+      "filename": "121.jpg",
+      "size": 257774,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              466,
+              472,
+              501,
+              548,
+              566,
+              633,
+              665,
+              690,
+              714,
+              662,
+              563,
+              464
+            ],
+            "all_points_y": [
+              367,
+              399,
+              421,
+              480,
+              497,
+              505,
+              501,
+              491,
+              463,
+              439,
+              401,
+              364
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "122.jpg266299": {
+      "filename": "122.jpg",
+      "size": 266299,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              406,
+              417,
+              448,
+              504,
+              528,
+              590,
+              631,
+              652,
+              667,
+              667,
+              584,
+              418,
+              406
+            ],
+            "all_points_y": [
+              350,
+              380,
+              398,
+              446,
+              469,
+              470,
+              464,
+              449,
+              430,
+              417,
+              390,
+              352,
+              350
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "123.jpg258451": {
+      "filename": "123.jpg",
+      "size": 258451,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              383,
+              393,
+              418,
+              458,
+              491,
+              532,
+              594,
+              621,
+              641,
+              593,
+              542,
+              445,
+              378
+            ],
+            "all_points_y": [
+              367,
+              395,
+              411,
+              449,
+              482,
+              491,
+              489,
+              473,
+              442,
+              423,
+              408,
+              377,
+              361
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "124.jpg261207": {
+      "filename": "124.jpg",
+      "size": 261207,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              408,
+              461,
+              565,
+              650,
+              652,
+              631,
+              600,
+              566,
+              513,
+              492,
+              442,
+              415,
+              411,
+              408
+            ],
+            "all_points_y": [
+              327,
+              349,
+              386,
+              417,
+              426,
+              448,
+              464,
+              466,
+              461,
+              454,
+              383,
+              359,
+              343,
+              325
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "125.jpg266948": {
+      "filename": "125.jpg",
+      "size": 266948,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              358,
+              358,
+              375,
+              406,
+              417,
+              436,
+              516,
+              548,
+              590,
+              587,
+              541,
+              457,
+              356
+            ],
+            "all_points_y": [
+              310,
+              343,
+              384,
+              440,
+              464,
+              476,
+              486,
+              479,
+              449,
+              443,
+              414,
+              368,
+              312
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "126.jpg238351": {
+      "filename": "126.jpg",
+      "size": 238351,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              418,
+              477,
+              538,
+              624,
+              624,
+              585,
+              548,
+              486,
+              442,
+              411,
+              415,
+              420
+            ],
+            "all_points_y": [
+              358,
+              402,
+              448,
+              505,
+              516,
+              545,
+              554,
+              542,
+              523,
+              390,
+              362,
+              359
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              427,
+              486,
+              585,
+              602,
+              610,
+              637,
+              667,
+              767,
+              888,
+              943,
+              978,
+              1011,
+              1026,
+              1033,
+              1004,
+              974,
+              841,
+              628,
+              467,
+              446,
+              427
+            ],
+            "all_points_y": [
+              358,
+              402,
+              472,
+              479,
+              467,
+              461,
+              445,
+              436,
+              427,
+              424,
+              442,
+              436,
+              455,
+              429,
+              359,
+              327,
+              343,
+              349,
+              344,
+              334,
+              358
+            ]
+          },
+          "region_attributes": {
+            "front": "engine",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "127.jpg248085": {
+      "filename": "127.jpg",
+      "size": 248085,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "128.jpg210815": {
+      "filename": "128.jpg",
+      "size": 210815,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "129.jpg197058": {
+      "filename": "129.jpg",
+      "size": 197058,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "130.jpg148050": {
+      "filename": "130.jpg",
+      "size": 148050,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "131.jpg217285": {
+      "filename": "131.jpg",
+      "size": 217285,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "132.jpg246093": {
+      "filename": "132.jpg",
+      "size": 246093,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "133.jpg222424": {
+      "filename": "133.jpg",
+      "size": 222424,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "134.jpg187265": {
+      "filename": "134.jpg",
+      "size": 187265,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "135.jpg183866": {
+      "filename": "135.jpg",
+      "size": 183866,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "136.jpg147847": {
+      "filename": "136.jpg",
+      "size": 147847,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "137.jpg185154": {
+      "filename": "137.jpg",
+      "size": 185154,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              266,
+              321,
+              387,
+              479,
+              470,
+              432,
+              399,
+              341,
+              287,
+              256,
+              256,
+              265
+            ],
+            "all_points_y": [
+              291,
+              343,
+              389,
+              451,
+              464,
+              491,
+              497,
+              486,
+              466,
+              347,
+              319,
+              288
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "138.jpg230933": {
+      "filename": "138.jpg",
+      "size": 230933,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              377,
+              415,
+              477,
+              545,
+              529,
+              491,
+              480,
+              449,
+              398,
+              372,
+              370,
+              372,
+              377
+            ],
+            "all_points_y": [
+              297,
+              331,
+              372,
+              415,
+              429,
+              448,
+              448,
+              446,
+              430,
+              343,
+              328,
+              297,
+              296
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "139.jpg184000": {
+      "filename": "139.jpg",
+      "size": 184000,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "140.jpg211900": {
+      "filename": "140.jpg",
+      "size": 211900,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              327,
+              380,
+              438,
+              479,
+              469,
+              448,
+              430,
+              387,
+              350,
+              341,
+              341,
+              322,
+              327
+            ],
+            "all_points_y": [
+              336,
+              375,
+              409,
+              433,
+              448,
+              463,
+              469,
+              464,
+              457,
+              445,
+              443,
+              362,
+              337
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              393,
+              424,
+              435,
+              426,
+              424,
+              408,
+              387,
+              383,
+              387
+            ],
+            "all_points_y": [
+              569,
+              568,
+              562,
+              547,
+              545,
+              529,
+              534,
+              554,
+              568
+            ]
+          },
+          "region_attributes": {
+            "front": "rightfoglamp\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "141.jpg222177": {
+      "filename": "141.jpg",
+      "size": 222177,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              331,
+              330,
+              341,
+              361,
+              414,
+              445,
+              472,
+              486,
+              443,
+              371,
+              330
+            ],
+            "all_points_y": [
+              343,
+              365,
+              402,
+              455,
+              469,
+              469,
+              455,
+              436,
+              409,
+              370,
+              343
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              414,
+              446,
+              448,
+              423,
+              398,
+              395,
+              402,
+              417
+            ],
+            "all_points_y": [
+              525,
+              550,
+              557,
+              559,
+              556,
+              537,
+              528,
+              526
+            ]
+          },
+          "region_attributes": {
+            "front": "rightfoglamp\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              333,
+              349,
+              417,
+              547,
+              699,
+              738,
+              634,
+              486,
+              331
+            ],
+            "all_points_y": [
+              188,
+              297,
+              304,
+              290,
+              269,
+              263,
+              166,
+              171,
+              188
+            ]
+          },
+          "region_attributes": {
+            "front": "windshield\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "142.jpg213784": {
+      "filename": "142.jpg",
+      "size": 213784,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              225,
+              268,
+              355,
+              390,
+              383,
+              368,
+              346,
+              324,
+              293,
+              247,
+              228,
+              216,
+              226
+            ],
+            "all_points_y": [
+              297,
+              330,
+              377,
+              402,
+              409,
+              421,
+              432,
+              433,
+              432,
+              421,
+              372,
+              319,
+              296
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              302,
+              279,
+              273,
+              275,
+              291,
+              315,
+              334,
+              309,
+              302
+            ],
+            "all_points_y": [
+              500,
+              505,
+              520,
+              535,
+              539,
+              541,
+              539,
+              507,
+              497
+            ]
+          },
+          "region_attributes": {
+            "front": "rightfoglamp\n\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "143.jpg215989": {
+      "filename": "143.jpg",
+      "size": 215989,
+      "regions": [
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              312,
+              372,
+              470,
+              455,
+              411,
+              375,
+              337,
+              315,
+              304,
+              306,
+              312
+            ],
+            "all_points_y": [
+              257,
+              306,
+              372,
+              389,
+              406,
+              406,
+              402,
+              387,
+              316,
+              282,
+              257
+            ]
+          },
+          "region_attributes": {
+            "front": "rightheadlight\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        },
+        {
+          "shape_attributes": {
+            "name": "polyline",
+            "all_points_x": [
+              378,
+              408,
+              412,
+              398,
+              364,
+              349,
+              352,
+              359,
+              383
+            ],
+            "all_points_y": [
+              482,
+              507,
+              520,
+              525,
+              525,
+              520,
+              494,
+              486,
+              482
+            ]
+          },
+          "region_attributes": {
+            "front": "rightfoglamp\n",
+            "rear": "",
+            "right": "",
+            "left": "",
+            "damage": ""
+          }
+        }
+      ],
+      "file_attributes": {}
+    },
+    "144.jpg180191": {
+      "filename": "144.jpg",
+      "size": 180191,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "145.jpg209280": {
+      "filename": "145.jpg",
+      "size": 209280,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "146.jpg222148": {
+      "filename": "146.jpg",
+      "size": 222148,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "147.jpg225919": {
+      "filename": "147.jpg",
+      "size": 225919,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "148.jpg300351": {
+      "filename": "148.jpg",
+      "size": 300351,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "149.jpg265459": {
+      "filename": "149.jpg",
+      "size": 265459,
+      "regions": [],
+      "file_attributes": {}
+    },
+    "150.jpg241138": {
+      "filename": "150.jpg",
+      "size": 241138,
+      "regions": [],
+      "file_attributes": {}
+    }
+  },
+  "_via_attributes": {
+    "region": {
+      "front": {
+        "type": "text",
+        "description": "",
+        "default_value": ""
+      },
+      "rear": {
+        "type": "text",
+        "description": "",
+        "default_value": ""
+      },
+      "right": {
+        "type": "text",
+        "description": "",
+        "default_value": ""
+      },
+      "left": {
+        "type": "text",
+        "description": "",
+        "default_value": ""
+      },
+      "damage": {
+        "type": "text",
+        "description": "",
+        "default_value": ""
+      }
+    },
+    "file": {}
+  }
+}

@@ -12,6 +12,7 @@ import shutil
 # Root directory of the project
 
 ROOT_DIR = os.getcwd()
+# ROOT_DIR = os.path.join(ROOT_DIR,"..")
 
 
 # Import Mask RCNN
@@ -38,7 +39,7 @@ class CarsConfig(Config):
 
     IMAGES_PER_GPU = 2
 
-    NUM_CLASSES = 1+9  # COCO has 80 classes
+    NUM_CLASSES = 1+36  # COCO has 80 classes
 
 
 
@@ -53,8 +54,8 @@ if __name__ == '__main__':
                         help="'train' or 'evaluate' on MS COCO")
     parser.add_argument('--dataset', required=True,
                         help='Direction of car panels')
-    parser.add_argument('--direction', required=True,
-                        help='Direction of car panels')
+    # parser.add_argument('--direction', required=True,
+    #                     help='Direction of car panels')
     parser.add_argument('--model', required=True,
                         metavar="/path/to/weights.h5",
                         help="Path to weights .h5 file or 'coco'")
@@ -71,7 +72,7 @@ if __name__ == '__main__':
     print("Command: ", args.command)
     print("Model: ", args.model)
     print("Dataset: ", args.dataset)
-    print("Direction: ", args.direction)
+    # print("Direction: ", args.direction)
     # print("Year: ", args.year)
     print("Logs: ", args.logs)
     # print("Auto Download: ", args.download)
@@ -120,7 +121,7 @@ if __name__ == '__main__':
     if args.command == "train":
         # Training dataset. Use the training set and 35K from the
         # validation set, as as in the Mask RCNN paper.
-        dataset_train, dataset_val = load_dataset(args.dataset, args.direction)
+        dataset_train, dataset_val = load_dataset(args.dataset)
         # dataset_train.load_coco(args.dataset, "train", year=args.year, auto_download=args.download)
         # dataset_train.prepare()
         print("datasets loaded ")
