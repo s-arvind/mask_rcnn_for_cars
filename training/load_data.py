@@ -4,7 +4,7 @@ import numpy as np
 import copy
 
 # path = "../videos/"
-label_path = "/Users/arvind/Documents/deeplearningvideo/labels/"
+label_path = "/home/rajeev/arvind/deeplearningvideo/labels/"
 import skimage
 
 
@@ -124,7 +124,7 @@ class Dataset(object):
         """Load the specified image and return a [H,W,3] Numpy array.
         """
         # Load image
-        image_path = os.path.join("~/Documents/data/",image_id["name"])
+        image_path = os.path.join("/home/rajeev/arvind/data/",image_id["name"])
         image = skimage.io.imread(image_path)
         height, width = image.shape[:2]
         # If grayscale. Convert to RGB for consistency.
