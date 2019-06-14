@@ -1695,7 +1695,6 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
                                              config.RPN_ANCHOR_STRIDE)
 
     # Keras requires a generator to run indefinitely.
-    counter = 0
     while True:
         try:
             # Increment index to pick next image. Shuffle if at the start of an epoch.
@@ -1794,8 +1793,6 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
                     batch_mrcnn_bbox[b] = mrcnn_bbox
                     batch_mrcnn_mask[b] = mrcnn_mask
             b += 1
-            print ("--"*10, counter)
-            counter += 1
             # Batch full?
             if b >= batch_size:
                 inputs = [batch_images, batch_image_meta, batch_rpn_match, batch_rpn_bbox,
@@ -1819,11 +1816,11 @@ def data_generator(dataset, config, shuffle=True, augment=False, augmentation=No
         except (GeneratorExit, KeyboardInterrupt):
             print("above error"*10)
             raise
-        except:
+        except Exception as e:
             # Log it and skip the image
             # logging.exception("Error processing image {}".format(
             #     ))
-            print("error"*10)
+            print("error"*10, e)
             error_count += 1
             if error_count > 5:
                 raise
@@ -2386,7 +2383,7 @@ class MaskRCNN():
             validation_steps=self.config.VALIDATION_STEPS,
             max_queue_size=100,
             workers=workers,
-            use_multiprocessing=False,
+            use_multiprocessing=True,
         )
         self.epoch = max(self.epoch, epochs)
 

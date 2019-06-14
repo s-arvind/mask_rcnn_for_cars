@@ -5,6 +5,7 @@ import copy
 
 # path = "../videos/"
 label_path = "/home/tarun/ankit/arvind/DeepLearningVideo/labels/"
+
 import skimage
 
 
@@ -124,7 +125,7 @@ class Dataset(object):
         """Load the specified image and return a [H,W,3] Numpy array.
         """
         # Load image
-        image_path = os.path.join("~/Documents/data/",image_id["name"])
+        image_path = os.path.join("/home/tarun/ankit/arvind/data/",image_id["name"])
         image = skimage.io.imread(image_path)
         height, width = image.shape[:2]
         # If grayscale. Convert to RGB for consistency.
@@ -153,21 +154,34 @@ class Dataset(object):
         # Convert polygons to a bitmap mask of shape
         # [height, width, instance_count]
         # info = self.image_info[image_id]
-        mask = np.zeros([height, width,len(image_masks)],
+        len_mask = 0
+        for i in image_masks:
+            key = value = ""
+            for k, v in i["region_attributes"].items():
+                if len(v.strip()) > 0 and k != "damage":
+                    key = k.strip()
+                    value = v.strip()
+                    break
+            if i["shape_attributes"]["name"] == "polyline" and key != "damage":
+                len_mask += 1
+
+        mask = np.zeros([height, width, len_mask],
                         dtype=np.uint8)
         class_ids = []
         for i, p in enumerate(image_masks):
             # Get indexes of pixels inside the polygon and set them to 1
-            rr, cc = skimage.draw.polygon(p["shape_attributes"]['all_points_y'], p["shape_attributes"]['all_points_x'])
             key = value = ""
             for k, v in p["region_attributes"].items():
                 if len(v.strip()) > 0 and k != "damage":
                     key = k.strip()
                     value = v.strip()
                     break
+            if key != "damage" and p["shape_attributes"]["name"] == "polyline":
+                rr, cc = skimage.draw.polygon(p["shape_attributes"]['all_points_y'],
+                                              p["shape_attributes"]['all_points_x'])
 
-            mask[rr, cc, i] = self.class_map[key][value]
-            class_ids.append(self.class_map[key][value])
+                mask[rr, cc, i] = self.class_map[key][value]
+                class_ids.append(self.class_map[key][value])
 
         # Return mask, and array of class IDs of each instance. Since we have
         # one class ID only, we return an array of 1s
