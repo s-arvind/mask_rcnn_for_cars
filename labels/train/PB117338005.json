@@ -744,8 +744,8 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
-            "left": "lefttaillight",
+            "rear": "lefttaillight",
+            "left": "",
             "right": "",
             "damage": ""
           }
@@ -919,8 +919,8 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
-            "left": "lefttailgate",
+            "rear": "tailgate",
+            "left": "",
             "right": "",
             "damage": ""
           }
@@ -1060,8 +1060,8 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
-            "left": "lefttaillight\n",
+            "rear": "lefttaillight",
+            "left": "",
             "right": "",
             "damage": ""
           }
@@ -1098,9 +1098,9 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
+            "rear": "righttaillight",
             "left": "",
-            "right": "righttaillight\n",
+            "right": "",
             "damage": ""
           }
         },
@@ -1283,8 +1283,8 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
-            "left": "lefttaillight\n",
+            "rear": "lefttaillight",
+            "left": "",
             "right": "",
             "damage": ""
           }
@@ -1391,9 +1391,9 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
+            "rear": "righttaillight",
             "left": "",
-            "right": "righttaillight\n",
+            "right": "",
             "damage": ""
           }
         }
@@ -1516,9 +1516,9 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
+            "rear": "righttaillight",
             "left": "",
-            "right": "righttaillight\n",
+            "right": "",
             "damage": ""
           }
         },
@@ -1568,8 +1568,8 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
-            "left": "lefttaillight\n",
+            "rear": "lefttaillight",
+            "left": "",
             "right": "",
             "damage": ""
           }
@@ -1627,7 +1627,7 @@
             ]
           },
           "region_attributes": {
-            "front": "\n",
+            "front": "",
             "rear": "bumper",
             "left": "",
             "right": "",
@@ -1861,8 +1861,8 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
-            "left": "lefttaillight\n",
+            "rear": "lefttaillight",
+            "left": "",
             "right": "",
             "damage": ""
           }
@@ -2038,8 +2038,8 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
-            "left": "lefttaillight\n",
+            "rear": "lefttaillight",
+            "left": "",
             "right": "",
             "damage": ""
           }
@@ -2080,9 +2080,9 @@
           },
           "region_attributes": {
             "front": "",
-            "rear": "",
+            "rear": "righttaillight",
             "left": "",
-            "right": "righttaillight\n",
+            "right": "",
             "damage": ""
           }
         }

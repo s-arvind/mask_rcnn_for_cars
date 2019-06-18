@@ -4,7 +4,7 @@ import numpy as np
 import copy
 
 # path = "../videos/"
-label_path = "/home/tarun/ankit/arvind/DeepLearningVideo/labels/"
+label_path = "/Users/arvind/Documents/deeplearningvideo/labels/"
 
 import skimage
 
@@ -125,7 +125,7 @@ class Dataset(object):
         """Load the specified image and return a [H,W,3] Numpy array.
         """
         # Load image
-        image_path = os.path.join("/home/tarun/ankit/arvind/data/",image_id["name"])
+        image_path = os.path.join("~/Documents/data/",image_id["name"])
         image = skimage.io.imread(image_path)
         height, width = image.shape[:2]
         # If grayscale. Convert to RGB for consistency.
@@ -160,9 +160,9 @@ class Dataset(object):
             for k, v in i["region_attributes"].items():
                 if len(v.strip()) > 0 and k != "damage":
                     key = k.strip()
-                    value = v.strip()
+                    value = v.split('\\')[0]
                     break
-            if i["shape_attributes"]["name"] == "polyline" and key != "damage":
+            if i["shape_attributes"]["name"] == "polyline" and key and key != "damage":
                 len_mask += 1
 
         mask = np.zeros([height, width, len_mask],
@@ -174,9 +174,9 @@ class Dataset(object):
             for k, v in p["region_attributes"].items():
                 if len(v.strip()) > 0 and k != "damage":
                     key = k.strip()
-                    value = v.strip()
+                    value = v if "\n" not in v else v[:-1]
                     break
-            if key != "damage" and p["shape_attributes"]["name"] == "polyline":
+            if key and key != "damage" and p["shape_attributes"]["name"] == "polyline":
                 rr, cc = skimage.draw.polygon(p["shape_attributes"]['all_points_y'],
                                               p["shape_attributes"]['all_points_x'])
 
