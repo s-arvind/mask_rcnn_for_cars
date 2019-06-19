@@ -195,7 +195,6 @@ class CarsDataset(utils.Dataset):
             # Get indexes of pixels inside the polygon and set them to 1
             rr, cc = skimage.draw.polygon(p['all_points_y'], p['all_points_x'])
             mask[rr, cc, i] = 1
-
         # Return mask, and array of class IDs of each instance. Since we have
         # one class ID only, we return an array of 1s
         # class_ids=np.array([self.class_names.index(shapes[0])])
