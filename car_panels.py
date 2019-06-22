@@ -70,7 +70,7 @@ class FoodConfig(Config):
     NUM_CLASSES = 1 + 36  # Background + balloon
 
     # Number of training steps per epoch
-    STEPS_PER_EPOCH = 1000
+    STEPS_PER_EPOCH = 2
 
     # Skip detections with < 90% confidence
     DETECTION_MIN_CONFIDENCE = 0.9
@@ -132,15 +132,20 @@ class CarsDataset(utils.Dataset):
                 while (index<len(regions)):
                     if regions[index]["shape_attributes"]["name"] != "polyline":
                         regions.pop(index)
-                        print("++"*100)
                         index -= 1
                     else:
+                        temp = -1
                         for key, value in regions[index]["region_attributes"].items():
                             if value and key == "damage":
                                 regions.pop(index)
                                 index -= 1
-                                print(index,"--" * 100)
+                                temp = value.strip()
                                 break
+                            else:
+                                temp = value.strip()
+                        if not temp:
+                            regions.pop(index)
+                            index -= 1
                     index += 1
                 for r in regions:
                     polygons.append(r['shape_attributes'])
