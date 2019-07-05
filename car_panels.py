@@ -34,6 +34,7 @@ import datetime
 import numpy as np
 import skimage.draw
 import pandas
+import cv2
 # Root directory of the project
 ROOT_DIR = os.path.abspath("")
 print("*"*10, ROOT_DIR)
@@ -70,7 +71,7 @@ class FoodConfig(Config):
     NUM_CLASSES = 1 + 36  # Background + balloon
 
     # Number of training steps per epoch
-    STEPS_PER_EPOCH = 2
+    STEPS_PER_EPOCH = 100
 
     # Skip detections with < 90% confidence
     DETECTION_MIN_CONFIDENCE = 0.9
@@ -166,7 +167,7 @@ class CarsDataset(utils.Dataset):
                     else:
                         pass
                 image_name = file.split(".")[0]+"_"+a['filename']
-                image_path = os.path.join("/Users/arvind/Documents/data", image_name)
+                image_path = os.path.join("/home/tarun/ankit/arvind/data", image_name)
                 image = skimage.io.imread(image_path)
                 height, width = image.shape[:2]
 
@@ -249,11 +250,15 @@ def color_splash(image, mask):
     # Make a grayscale copy of the image. The grayscale copy still
     # has 3 RGB channels, though.
     gray = skimage.color.gray2rgb(skimage.color.rgb2gray(image)) * 255
+    blank_image = np.zeros(image.shape,np.uint8)
+    blank_image[:,:] = (243, 250, 197)
     # Copy color pixels from the original color image where mask is set
     if mask.shape[-1] > 0:
         # We're treating all instances as one, so collapse the mask into one layer
         mask = (np.sum(mask, -1, keepdims=True) >= 1)
-        splash = np.where(mask, image, gray).astype(np.uint8)
+        splash = np.where(mask,blank_image, image).astype(np.uint8)
+        splash = cv2.addWeighted(splash, 0.6, image, 0.4, 0)
+        # splash = np.where(mask, image, gray).astype(np.uint8)
     else:
         splash = gray.astype(np.uint8)
     return splash
@@ -270,6 +275,7 @@ def detect_and_color_splash(model, image_path=None, video_path=None):
         image = skimage.io.imread(args.image)
         # Detect objects
         r = model.detect([image], verbose=1)[0]
+        print(r['class_ids'])
         # Color splash
         splash = color_splash(image, r['masks'])
         # Save output
