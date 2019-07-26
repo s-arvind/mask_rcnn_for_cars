@@ -22,30 +22,24 @@
     "reardoor": 16,
     "frontdoorhandle": 17,
     "reardoorhandle": 18,
-    "frontdoorwindow": 19,
-    "reardoorwindow": 20,
-    "sidemirror": 21,
-    "runningboard": 22,
-    "fender": 23,
-    "qpanel": 24,
-    "fuellid": 25
+    "runningboard": 19,
+    "fender": 20,
+    "qpanel": 21,
+    "fuellid": 22
   },
   "right": {
-    "frontdoor": 26,
-    "reardoor": 27,
-    "frontdoorhandle": 28,
-    "reardoorhandle": 29,
-    "frontdoorwindow": 30,
-    "reardoorwindow": 31,
-    "sidemirror": 32,
-    "runningboard": 33,
-    "fender": 34,
-    "qpanel": 35,
-    "fuellid": 36
+    "frontdoor": 23,
+    "reardoor": 24,
+    "frontdoorhandle": 25,
+    "reardoorhandle": 26,
+    "runningboard": 27,
+    "fender": 28,
+    "qpanel": 29,
+    "fuellid": 30
   },
   "damage": {
-    "dent": 37,
-    "scratch": 38,
-    "crack": 39
+    "dent": 31,
+    "scratch": 32,
+    "crack": 33
   }
 }
