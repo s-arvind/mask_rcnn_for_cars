@@ -1243,6 +1243,7 @@ def load_image_gt(dataset, config, image_id, augment=False, augmentation=None,
             """Determines which augmenters to apply to masks."""
             return augmenter.__class__.__name__ in MASK_AUGMENTERS
 
+
         # Store shapes before augmentation to compare
         image_shape = image.shape
         mask_shape = mask.shape
@@ -1629,7 +1630,7 @@ def generate_random_rois(image_shape, count, gt_class_ids, gt_boxes):
 
 
 def data_generator(dataset, config, shuffle=True, augment=False, augmentation=None,
-                   random_rois=0, batch_size=1, detection_targets=False,
+                   random_rois=0, batch_size=2, detection_targets=False,
                    no_augmentation_sources=None):
     """A generator that returns images and corresponding target class ids,
     bounding box deltas, and masks.

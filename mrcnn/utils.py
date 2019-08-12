@@ -326,6 +326,7 @@ class Dataset(object):
                 # Include BG class in all datasets
                 if i == 0 or source == info['source']:
                     self.source_class_ids[source].append(i)
+        print (self.source_class_ids)
 
     def map_source_class_id(self, source_class_id):
         """Takes a source class ID and returns the int class ID assigned to it.

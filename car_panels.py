@@ -37,7 +37,7 @@ import pandas
 import cv2
 # Root directory of the project
 ROOT_DIR = os.path.abspath("")
-print("*"*10, ROOT_DIR)
+
 # Import Mask RCNN
 sys.path.append(ROOT_DIR)  # To find local version of the library
 from mrcnn.config import Config
@@ -68,7 +68,7 @@ class CarConfig(Config):
     IMAGES_PER_GPU = 2
 
     # Number of classes (including background)
-    NUM_CLASSES = 1 + 36  # Background + balloon
+    NUM_CLASSES = 1 + 30  # Background + balloon
 
     # Number of training steps per epoch
     STEPS_PER_EPOCH = 100
@@ -100,85 +100,66 @@ class CarsDataset(utils.Dataset):
         # Train or validation dataset?
         assert subset in ["train", "val"]
         labeled_data_path = os.path.join(ROOT_DIR, "labels", subset)
-
-        # dataset_dir = os.path.join(dataset_dir, subset)
-
-        # Load annotations
-        # VGG Image Annotator (up to version 1.6) saves each image in the form:
-        # { 'filename': '28503151_5b5b7ec140_b.jpg',
-        #   'regions': {
-        #       '0': {
-        #           'region_attributes': {},
-        #           'shape_attributes': {
-        #               'all_points_x': [...],
-        #               'all_points_y': [...],
-        #               'name': 'polygon'}},
-        #       ... more regions ...
-        #   },
-        #   'size': 100202
-        # }
-        # We mostly care about the x and y coordinates of each region
-        # Note: In VIA 2.0, regions was changed from a dict to a list.
         file_names = os.listdir(labeled_data_path)
+
         for file in file_names:
-            print(file)
-            annotations = json.load(open(os.path.join(labeled_data_path, file), 'r'))
-            annotations = list(annotations["_via_img_metadata"].values())
-            annotations = [a for a in annotations if a["regions"]]
-            for a in annotations:
-                polygons = []
-                objects = []
-                regions = a["regions"]
-                index = 0
-                while (index<len(regions)):
-                    if regions[index]["shape_attributes"]["name"] != "polyline":
-                        regions.pop(index)
-                        index -= 1
-                    else:
-                        temp = -1
-                        for key, value in regions[index]["region_attributes"].items():
-                            if value and key == "damage":
-                                regions.pop(index)
-                                index -= 1
-                                temp = value.strip()
-                                break
-                            else:
-                                temp = value.strip()
-                        if not temp:
-                            regions.pop(index)
-                            index -= 1
-                    index += 1
-                for r in regions:
-                    polygons.append(r['shape_attributes'])
-                    # print("polygons=", polygons)
-                    objects.append(r['region_attributes'])
+            if file == "30.json" or file == "2.json" or file == "1.json":
+                annotations = json.load(open(os.path.join(labeled_data_path, file), 'r'))
+                annotations = list(annotations["_via_img_metadata"].values())
+                annotations = [a for a in annotations if len(a["regions"]) > 0]
+                print (file)
+                for a in annotations:
+                    polygons = []
+                    objects = []
+                    regions = a["regions"]
+                    # index = 0
+                    # while (index<len(regions)):
+                    #     if regions[index]["shape_attributes"]["name"] != "polyline":
+                    #         regions.pop(index)
+                    #         index -= 1
+                    #     else:
+                    #         temp = -1
+                    #         for key, value in regions[index]["region_attributes"].items():
+                    #             if value and key == "damage":
+                    #                 regions.pop(index)
+                    #                 index -= 1
+                    #                 temp = value.strip()
+                    #                 break
+                    #             else:
+                    #                 temp = value.strip()
+                    #         if not temp:
+                    #             regions.pop(index)
+                    #             index -= 1
+                    #     index += 1
+                    for r in regions:
+                        polygons.append(r['shape_attributes'])
+                        objects.append(r['region_attributes'])
 
-                class_ids = []
-                print(file, "    ",a["filename"])
-                for c in objects:
-                    if c["front"]:
-                        class_ids.append(class_names["front"][c["front"].strip()])
-                    elif c["rear"]:
-                        class_ids.append(class_names["rear"][c["rear"].strip()])
-                    elif c["left"]:
-                        class_ids.append(class_names["left"][c["left"].strip()])
-                    elif c["right"]:
-                        class_ids.append(class_names["right"][c["right"].strip()])
-                    else:
-                        pass
-                image_name = file.split(".")[0]+"_"+a['filename']
-                image_path = os.path.join("/home/tarun/ankit/arvind/data", image_name)
-                image = skimage.io.imread(image_path)
-                height, width = image.shape[:2]
+                    class_ids = []
+                    print(file, "    ", a["filename"])
+                    for c in objects:
+                        if c["front"].strip():
+                            class_ids.append(class_names["front"][c["front"].strip()])
+                        elif c["rear"].strip():
+                            class_ids.append(class_names["rear"][c["rear"].strip()])
+                        elif c["left"].strip():
+                            class_ids.append(class_names["left"][c["left"].strip()])
+                        elif c["right"].strip():
+                            class_ids.append(class_names["right"][c["right"].strip()])
+                        else:
+                            pass
+                    image_name = a['filename']
+                    image_path = os.path.join(ROOT_DIR, "../data2/"+file.split(".")[0], image_name)
+                    image = skimage.io.imread(image_path)
+                    height, width = image.shape[:2]
 
-
-                self.add_image(
-                    "cars",
-                    image_id=image_name,  # use file name as a unique image id
-                    path=image_path,
-                    width=width, height=height,
-                    polygons=polygons,
-                    class_ids=class_ids)
+                    self.add_image(
+                        "cars",
+                        image_id=image_name,  # use file name as a unique image id
+                        path=image_path,
+                        width=width, height=height,
+                        polygons=polygons,
+                        class_ids=class_ids)
 
     def load_mask(self, image_id):
         """Generate instance masks for an image.
