@@ -133,8 +133,9 @@ class CarsDataset(utils.Dataset):
                     #     index += 1
                     for r in regions:
                         if not r["region_attributes"]["damage"].strip():
-                            polygons.append(r['shape_attributes'])
-                            objects.append(r['region_attributes'])
+                            if r["region_attributes"]["front"].strip() or r["region_attributes"]["rear"].strip() or r["region_attributes"]["left"].strip() or r["region_attributes"]["right"].strip():
+                                polygons.append(r['shape_attributes'])
+                                objects.append(r['region_attributes'])
 
                     class_ids = []
                     print(file, "    ", a["filename"])
