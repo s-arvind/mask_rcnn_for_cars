@@ -1221,46 +1221,47 @@ def load_image_gt(dataset, config, image_id, augment=False, augmentation=None,
 
     # Random horizontal flips.
     # TODO: will be removed in a future update in favor of augmentation
-    if augment:
-        logging.warning("'augment' is deprecated. Use 'augmentation' instead.")
-        if random.randint(0, 1):
-            image = np.fliplr(image)
-            mask = np.fliplr(mask)
+    # if augment:
+    #     logging.warning("'augment' is deprecated. Use 'augmentation' instead.")
+    #     if random.randint(0, 1):
+    #         image = np.fliplr(image)
+    #         mask = np.fliplr(mask)
 
     # Augmentation
     # This requires the imgaug lib (https://github.com/aleju/imgaug)
-    if augmentation:
-        import imgaug
-
-        # Augmenters that are safe to apply to masks
-        # Some, such as Affine, have settings that make them unsafe, so always
-        # test your augmentation on masks
-        MASK_AUGMENTERS = ["Sequential", "SomeOf", "OneOf", "Sometimes",
-                           "Fliplr", "Flipud", "CropAndPad",
-                           "Affine", "PiecewiseAffine"]
-
-        def hook(images, augmenter, parents, default):
-            """Determines which augmenters to apply to masks."""
-            return augmenter.__class__.__name__ in MASK_AUGMENTERS
-
-
-        # Store shapes before augmentation to compare
-        image_shape = image.shape
-        mask_shape = mask.shape
-        # Make augmenters deterministic to apply similarly to images and masks
-        det = augmentation.to_deterministic()
-        image = det.augment_image(image)
-        # Change mask to np.uint8 because imgaug doesn't support np.bool
-        mask = det.augment_image(mask.astype(np.uint8),
-                                 hooks=imgaug.HooksImages(activator=hook))
-        # Verify that shapes didn't change
-        assert image.shape == image_shape, "Augmentation shouldn't change image size"
-        assert mask.shape == mask_shape, "Augmentation shouldn't change mask size"
-        # Change mask back to bool
-        mask = mask.astype(np.bool)
+    # if augmentation:
+    #     import imgaug
+    #
+    #     # Augmenters that are safe to apply to masks
+    #     # Some, such as Affine, have settings that make them unsafe, so always
+    #     # test your augmentation on masks
+    #     MASK_AUGMENTERS = ["Sequential", "SomeOf", "OneOf", "Sometimes",
+    #                        "Fliplr", "Flipud", "CropAndPad",
+    #                        "Affine", "PiecewiseAffine"]
+    #
+    #     def hook(images, augmenter, parents, default):
+    #         """Determines which augmenters to apply to masks."""
+    #         return augmenter.__class__.__name__ in MASK_AUGMENTERS
+    #
+    #
+    #     # Store shapes before augmentation to compare
+    #     image_shape = image.shape
+    #     mask_shape = mask.shape
+    #     # Make augmenters deterministic to apply similarly to images and masks
+    #     det = augmentation.to_deterministic()
+    #     image = det.augment_image(image)
+    #     # Change mask to np.uint8 because imgaug doesn't support np.bool
+    #     mask = det.augment_image(mask.astype(np.uint8),
+    #                              hooks=imgaug.HooksImages(activator=hook))
+    #     # Verify that shapes didn't change
+    #     assert image.shape == image_shape, "Augmentation shouldn't change image size"
+    #     assert mask.shape == mask_shape, "Augmentation shouldn't change mask size"
+    #     # Change mask back to bool
+    #     mask = mask.astype(np.bool)
 
     # Note that some boxes might be all zeros if the corresponding mask got cropped out.
     # and here is to filter them out
+
     _idx = np.sum(mask, axis=(0, 1)) > 0
     mask = mask[:, :, _idx]
     # print(image_id, dataset.image_info[image_id])

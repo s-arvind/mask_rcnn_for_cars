@@ -132,11 +132,13 @@ class CarsDataset(utils.Dataset):
                     #             index -= 1
                     #     index += 1
                     for r in regions:
-                        polygons.append(r['shape_attributes'])
-                        objects.append(r['region_attributes'])
+                        if not r["region_attributes"]["damage"].strip():
+                            polygons.append(r['shape_attributes'])
+                            objects.append(r['region_attributes'])
 
                     class_ids = []
                     print(file, "    ", a["filename"])
+
                     for c in objects:
                         if c["front"].strip():
                             class_ids.append(class_names["front"][c["front"].strip()])
@@ -176,11 +178,11 @@ class CarsDataset(utils.Dataset):
         # Convert polygons to a bitmap mask of shape
         # [height, width, instance_count]
         info = self.image_info[image_id]
-        mask = np.zeros([info["height"], info["width"], len(info["polygons"])],
+        mask = np.zeros([ info["height"], info["width"] ,len(info["polygons"])],
                         dtype=np.uint8)
         for i, p in enumerate(info["polygons"]):
             # Get indexes of pixels inside the polygon and set them to 1
-            rr, cc = skimage.draw.polygon(p['all_points_y'], p['all_points_x'])
+            rr, cc = skimage.draw.polygon( p['all_points_y'], p['all_points_x'])
             mask[rr, cc, i] = 1
         # Return mask, and array of class IDs of each instance. Since we have
         # one class ID only, we return an array of 1s
