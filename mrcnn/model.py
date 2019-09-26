@@ -1855,8 +1855,7 @@ class MaskRCNN():
                             "For example, use 256, 320, 384, 448, 512, ... etc. ")
 
         # Inputs
-        input_image = KL.Input(
-            shape=[None, None, config.IMAGE_SHAPE[2]], name="input_image")
+        input_image = KL.Input(shape=[None, None, config.IMAGE_SHAPE[2]], name="input_image")
         input_image_meta = KL.Input(shape=[config.IMAGE_META_SIZE],
                                     name="input_image_meta")
         if mode == "training":
@@ -2494,8 +2493,7 @@ class MaskRCNN():
         masks: [H, W, N] instance binary masks
         """
         assert self.mode == "inference", "Create model in inference mode."
-        assert len(
-            images) == self.config.BATCH_SIZE, "len(images) must be equal to BATCH_SIZE"
+        assert len(images) == self.config.BATCH_SIZE, "len(images) must be equal to BATCH_SIZE"
 
         if verbose:
             log("Processing {} images".format(len(images)))
@@ -2527,6 +2525,7 @@ class MaskRCNN():
             self.keras_model.predict([molded_images, image_metas, anchors], verbose=0)
         # Process detections
         results = []
+
         for i, image in enumerate(images):
             final_rois, final_class_ids, final_scores, final_masks =\
                 self.unmold_detections(detections[i], mrcnn_mask[i],

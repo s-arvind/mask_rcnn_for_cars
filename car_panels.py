@@ -36,12 +36,16 @@ import skimage.draw
 import pandas
 import cv2
 # Root directory of the project
+from skimage.measure import find_contours
+
+from mrcnn.visualize import random_colors, apply_mask
+
 ROOT_DIR = os.path.abspath("")
 
 # Import Mask RCNN
 sys.path.append(ROOT_DIR)  # To find local version of the library
 from mrcnn.config import Config
-from mrcnn import model as modellib, utils
+from mrcnn import model as modellib, utils, visualize
 
 # Path to trained weights file
 COCO_WEIGHTS_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
@@ -66,6 +70,7 @@ class CarConfig(Config):
     # We use a GPU with 12GB memory, which can fit two images.
     # Adjust down if you use a smaller GPU.
     IMAGES_PER_GPU = 2
+    GPU_COUNT = 1
 
     # Number of classes (including background)
     NUM_CLASSES = 1 + 30  # Background + balloon
@@ -179,7 +184,7 @@ class CarsDataset(utils.Dataset):
         # Convert polygons to a bitmap mask of shape
         # [height, width, instance_count]
         info = self.image_info[image_id]
-        mask = np.zeros([ info["height"], info["width"] ,len(info["polygons"])],
+        mask = np.zeros([info["height"], info["width"] ,len(info["polygons"])],
                         dtype=np.uint8)
         for i, p in enumerate(info["polygons"]):
             # Get indexes of pixels inside the polygon and set them to 1
@@ -218,10 +223,6 @@ def train(model):
     # COCO trained weights, we don't need to train too long. Also,
     # no need to train all layers, just the heads should do it.
     print("Training network heads")
-    model.train(dataset_train, dataset_val,
-                learning_rate=config.LEARNING_RATE,
-                epochs=10,
-                layers='heads')
 
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
@@ -255,36 +256,90 @@ def color_splash(image, mask):
     # has 3 RGB channels, though.
     gray = skimage.color.gray2rgb(skimage.color.rgb2gray(image)) * 255
     blank_image = np.zeros(image.shape,np.uint8)
-    blank_image[:,:] = (243, 250, 197)
+    blank_image[:,:] = (158, 224, 255)
+    # padded_mask = np.zeros(
+    #     (mask.shape[0] + 2, mask.shape[1] + 2), dtype=np.uint8)
+    # padded_mask[1:-1, 1:-1] = mask
+    # contours = visualize.find_contours(padded_mask, 0.5)
     # Copy color pixels from the original color image where mask is set
+
     if mask.shape[-1] > 0:
         # We're treating all instances as one, so collapse the mask into one layer
         mask = (np.sum(mask, -1, keepdims=True) >= 1)
         splash = np.where(mask,blank_image, image).astype(np.uint8)
+
         splash = cv2.addWeighted(splash, 0.6, image, 0.4, 0)
+        # cv2.imshow("blank", splash)
+        # cv2.waitKey()
         # splash = np.where(mask, image, gray).astype(np.uint8)
     else:
         splash = gray.astype(np.uint8)
     return splash
 
+def save_masked_image(image, boxes, masks, class_ids, class_names,
+                      scores=None, captions=None) :
+    N = boxes.shape[0]
+
+    if not N:
+        print("\n*** No instances to display *** \n")
+    else:
+        assert boxes.shape[0] == masks.shape[-1] == class_ids.shape[0]
+
+    color = (165, 160, 65)
+    image_copy = image.copy()
+    for i in range(N):
+        if not np.any(boxes[i]):
+            continue
+        y1, x1, y2, x2 = boxes[i]
+
+        if not captions:
+            class_id = class_ids[i]
+            score = scores[i] if scores is not None else None
+            label = class_names[class_id]
+            caption = "{} {:.3f}".format(label, score) if score else label
+        else:
+            caption = captions[i]
+        cv2.putText(image, caption, (x1, y1), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.7, (237, 95, 223), lineType=cv2.LINE_AA)
+
+        # Mask
+        mask = masks[:, :, i]
+        padded_mask = np.zeros(
+            (mask.shape[0] + 2, mask.shape[1] + 2), dtype=np.uint8)
+        padded_mask[1:-1, 1:-1] = mask
+        contours = find_contours(padded_mask, 0.5)
+        for verts in contours:
+            verts = np.fliplr(verts) - 1
+            verts = verts.reshape((-1, 1, 2))
+            cv2.polylines(image, np.int32(verts), True, color, 2)
+            cv2.fillPoly(image_copy, np.int32([verts]), color)
+            cv2.addWeighted(image_copy,0.1, image, 0.9, 0, image)
+
+    return image
 
 def detect_and_color_splash(model, image_path=None, video_path=None):
     assert image_path or video_path
+    class_names = {}
+    with open(ROOT_DIR + "/labels.json", "r") as f:
+        class_names = json.load(f)
 
+    labels = {}
+    for dir, panel in class_names.items():
+        for key, value in panel.items():
+            labels[value] = dir+key
     # Image or video?
     if image_path:
         # Run model detection and generate the color splash effect
         print("Running on {}".format(args.image))
         # Read image
-        image = skimage.io.imread(args.image)
-        # Detect objects
+        import cv2
+        image = cv2.imread(args.image)
         r = model.detect([image], verbose=1)[0]
-        print(r['class_ids'])
-        # Color splash
-        splash = color_splash(image, r['masks'])
+        # splash = color_splash(image, r['masks'])
         # Save output
+        splash = save_masked_image(image, r['rois'], r['masks'], r['class_ids'], labels, r['scores'])
         file_name = "splash_{:%Y%m%dT%H%M%S}.png".format(datetime.datetime.now())
-        skimage.io.imsave(file_name, splash)
+        cv2.imwrite(file_name, splash)
+
     elif video_path:
         import cv2
         # Video capture
@@ -416,8 +471,12 @@ if __name__ == '__main__':
     if args.command == "train":
         train(model)
     elif args.command == "splash":
+        # img_list = os.listdir(args.image)
+        # for img in img_list[20:120]:
+        #     img_
+        #     print (img)
         detect_and_color_splash(model, image_path=args.image,
-                                video_path=args.video)
+                            video_path=args.video)
     else:
         print("'{}' is not recognized. "
               "Use 'train' or 'splash'".format(args.command))
