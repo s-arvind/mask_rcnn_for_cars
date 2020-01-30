@@ -117,25 +117,7 @@ class CarsDataset(utils.Dataset):
                     polygons = []
                     objects = []
                     regions = a["regions"]
-                    # index = 0
-                    # while (index<len(regions)):
-                    #     if regions[index]["shape_attributes"]["name"] != "polyline":
-                    #         regions.pop(index)
-                    #         index -= 1
-                    #     else:
-                    #         temp = -1
-                    #         for key, value in regions[index]["region_attributes"].items():
-                    #             if value and key == "damage":
-                    #                 regions.pop(index)
-                    #                 index -= 1
-                    #                 temp = value.strip()
-                    #                 break
-                    #             else:
-                    #                 temp = value.strip()
-                    #         if not temp:
-                    #             regions.pop(index)
-                    #             index -= 1
-                    #     index += 1
+                    
                     for r in regions:
                         if not r["region_attributes"]["damage"].strip():
                             if r["region_attributes"]["front"].strip() or r["region_attributes"]["rear"].strip() or r["region_attributes"]["left"].strip() or r["region_attributes"]["right"].strip():
